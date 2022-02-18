@@ -1,0 +1,440 @@
+:root {
+    --bg: #0b1218;
+    --body: #131d28;
+    --white: rgb(255, 255, 255);
+    --black: #080808;
+    --green: rgb(0, 230, 0);
+    --marron: rgb(100, 54, 1);
+}
+
+a {
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--white);
+    text-decoration: none;
+}
+
+a:active,
+a:hover {
+    outline: 0 none;
+}
+
+body,
+html {
+    background-color: var(--body);
+    position: relative;
+    overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
+}
+
+
+/*--------------------------------------------------------------
+  # Header
+  --------------------------------------------------------------*/
+
+#header {
+    width: 100%;
+    height: auto;
+}
+
+#header .navbar {
+    background: linear-gradient(-120deg, var(--white), var(--bg)) !important;
+    margin-top: 30px;
+    border-radius: 8px;
+}
+
+#header .navbar h6 {
+    color: var(--white);
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
+
+#header .navbar .nav-item i {
+    color: var(--white);
+    font-size: 25px;
+    padding: 5px;
+    background: rgb(0, 158, 0);
+    border-radius: 8px;
+    transition: 0.5s;
+}
+
+#header .navbar .nav-item i:hover {
+    transform: scale(1.1);
+}
+
+#header .profile_clinique {
+    margin-top: 25px;
+    background-color: var(--bg);
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;
+}
+
+#header .profile_clinique .profile {
+    width: 100%;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+#header .profile_clinique .profile .logo_clinique {
+    width: 100%;
+    background: linear-gradient(-120deg, var(--white), var(--bg)) !important;
+    padding: 10px;
+    border-radius: 8px;
+    height: 200px;
+}
+
+#header .profile_clinique .profile .logo_clinique img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#header .profile_clinique .profile .logo_doctopharme {
+    width: 100%;
+    background: linear-gradient(-120deg, var(--white), var(--bg)) !important;
+    padding: 10px;
+    border-radius: 8px;
+    height: 200px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#header .profile_clinique .profile .logo_doctopharme img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#header .profile_clinique .profile .description_profile {
+    border-radius: 8px;
+}
+
+#header .profile_clinique .profile .description_profile h4 {
+    color: var(--white);
+    font-size: 18px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: rgba(21, 255, 0, 0.555);
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+#header .profile_clinique .profile .description_profile i {
+    color: var(--green);
+}
+
+#header .profile_clinique .profile .description_profile .fa-map-marker {
+    font-size: 21px;
+}
+
+#header .profile_clinique .profile .description_profile h6 {
+    color: var(--white);
+}
+
+#header .profile_clinique .profile .logo_doctopharme img {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+
+/*--------------------------------------------------------------
+  # Fin Header
+  --------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+  # Clinique
+  --------------------------------------------------------------*/
+
+#clinique {
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+}
+
+#clinique .content_clinique {
+    padding: 5px;
+    background-color: var(--bg);
+    border-radius: 8px;
+}
+
+#clinique .content_clinique .planing_clinique {
+    height: 100vh;
+    width: 100%;
+    padding: 10px;
+}
+
+#clinique .content_clinique .planing_clinique .titre_planing h5 {
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: var(--white);
+    border-bottom: 3px double var(--green);
+    width: 150px;
+    padding-bottom: 10px;
+}
+
+#clinique .content_clinique .planing_clinique .content_planing {
+    height: 88vh;
+}
+
+#clinique .content_clinique .planing_clinique .content_planing .bloc_planings {
+    margin-top: 5px;
+    padding: 15px;
+}
+
+#clinique .content_clinique .planing_clinique .content_planing .bloc_planings h6 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--white);
+}
+
+#clinique .content_clinique .planing_clinique .content_planing .bloc_planings h6 i {
+    color: var(--green);
+}
+
+#clinique .content_clinique .planing_clinique .content_planing .bloc_planings .card_heure {
+    padding: 10px;
+    background-color: var(--white);
+    box-shadow: 0px 0px 4px 2px var(--green);
+    margin-top: 10px;
+}
+
+#clinique .content_clinique .planing_clinique .content_planing .bloc_planings .card_heure h6 {
+    font-size: 16px;
+    color: var(--marron);
+    font-weight: 600;
+}
+
+#clinique .content_clinique .planing_clinique .content_planing .bloc_planings .card_heure .action_heure #btn_on {
+    background: var(--green);
+    padding-left: 10px;
+    padding-right: 10px;
+    color: var(--white);
+    font-weight: 600;
+    border-top: 3px solid rgb(200, 187, 187) !important;
+    border-right: 11px solid rgb(255, 255, 255) !important;
+    border-bottom: 3px solid rgb(200, 187, 187) !important;
+    border-left: 11px solid rgb(255, 255, 255) !important;
+}
+
+#clinique .content_clinique .planing_clinique .content_planing .bloc_planings .card_heure .action_heure #btn_on:focus {
+    box-shadow: none!important;
+}
+
+#clinique .content_clinique .planing_clinique .content_planing .bloc_planings .card_heure .action_heure #btn_of {
+    background: red;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: var(--white);
+    font-weight: 600;
+    border-top: 3px solid rgb(200, 187, 187) !important;
+    border-right: 11px solid rgb(255, 255, 255) !important;
+    border-bottom: 3px solid rgb(200, 187, 187) !important;
+    border-left: 11px solid rgb(255, 255, 255) !important;
+}
+
+#clinique .content_clinique .planing_clinique .content_planing .bloc_planings .card_heure .action_heure #btn_of:focus {
+    box-shadow: none!important;
+}
+
+.rendezVous_prise {
+    padding-right: 10px;
+}
+
+.rendezVous_prise .titre h6 {
+    margin-top: 20px;
+    color: var(--white);
+    font-size: 17px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: rgba(21, 255, 0, 0.555);
+    letter-spacing: 1px;
+}
+
+.rendezVous_prise .content_rendezVousPrise {
+    padding: 10px;
+}
+
+.rendezVous_prise .content_rendezVousPrise .card_prise {
+    background-color: var(--white);
+    padding: 10px;
+    border-top: 3px solid rgb(200, 187, 187) !important;
+    border-right: 11px solid rgb(255, 255, 255) !important;
+    border-bottom: 3px solid rgb(200, 187, 187) !important;
+    border-left: 11px solid rgb(255, 255, 255) !important;
+    margin-top: 15px;
+}
+
+.rendezVous_prise .content_rendezVousPrise .card_prise h6 {
+    color: var(--marron);
+    font-weight: 600;
+}
+
+.rendezVous_prise .content_rendezVousPrise .card_prise .btn_suprimer {
+    background-color: red;
+    color: var(--white);
+    margin-top: -30px;
+    font-size: 20px;
+}
+
+.rendezVous_prise .content_rendezVousPrise .card_prise .btn_suprimer:focus {
+    box-shadow: none!important;
+}
+
+.rendezVous_prise .content_rendezVousPrise .card_prise .btn_valider {
+    background-color: var(--green);
+    color: var(--white);
+    border-top: 3px solid rgb(200, 187, 187) !important;
+    border-right: 11px solid rgb(255, 255, 255) !important;
+    border-bottom: 3px solid rgb(200, 187, 187) !important;
+    border-left: 11px solid rgb(255, 255, 255) !important;
+    margin-top: 20px;
+}
+
+.rendezVous_prise .content_rendezVousPrise .card_prise .btn_valider:focus {
+    box-shadow: none!important;
+}
+ .card_reservation {
+	background-color: rgba(0, 128, 0, 0.37) !important;
+	padding: 10px;
+	border-radius: 10px;
+}
+ .card_reservation i{
+	color: var(--white);
+	font-size: 30px;
+	-webkit-animation: spin 4s linear infinite;
+    -moz-animation: spin 4s linear infinite;
+    animation: spin 4s linear infinite;
+}
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+.card_reservation h5{
+	font-size: 15px;
+	font-weight: 600;
+	color: var(--white);
+	margin-top: 10px;
+}
+
+.card_reservationValider {
+	background-color: rgba(128, 68, 0, 0.37) !important;
+	padding: 10px;
+	border-radius: 10px;
+}
+.card_reservationValider #suprimerReservation{
+	margin-top: -40px!important;
+	background-color: var(--white)!important;
+	color: red;
+	border: none!important;
+}
+.card_reservationValider #suprimerReservation:focus{
+	box-shadow: none!important;
+}
+ .card_reservationValider i{
+	color: var(--white);
+	font-size: 30px;
+
+}
+
+.card_reservationValider h5{
+	font-size: 15px;
+	font-weight: 600;
+	color: var(--white);
+	margin-top: 10px;
+}
+.card_reservationValider button{
+  border: 2px solid var(--white);
+  background-color: rgba(51, 28, 1, 0.733) !important;
+  transition: 0.5s;
+  color: var(--white);
+  margin-top: 10px;
+}
+.card_reservationValider button:focus{
+	box-shadow: none!important;
+}
+.card_reservationValider button:hover{
+	transform: scale(1.1);
+	color: var(--white);
+}
+.card_reservationRefuser {
+	background-color: rgba(128, 0, 0, 0.37) !important;
+	padding: 10px;
+	border-radius: 10px;
+}
+.card_reservationRefuser #suprimerReservation{
+	margin-top: -40px!important;
+	background-color: var(--white)!important;
+	color: red;
+	border: none!important;
+}
+.card_reservationRefuser #suprimerReservation:focus{
+	box-shadow: none!important;
+}
+ .card_reservationRefuser i{
+	color: var(--white);
+	font-size: 30px;
+}
+.card_reservationRefuser h5{
+	font-size: 15px;
+	font-weight: 600;
+	color: var(--white);
+	margin-top: 10px;
+}
+/*--------------------------------------------------------------
+  # Fin Clinique
+  --------------------------------------------------------------*/
+  /*--------------------------------------------------------------
+  # Footer
+  --------------------------------------------------------------*/
+
+footer {
+	height: 60px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	padding-top: 20px;
+	bottom: 0!important;
+	background: linear-gradient(-120deg, var(--white), var(--bg)) !important;
+	margin-top: 30px;
+}
+
+footer h6 {
+	font-size: 18px;
+	color: var(--white);
+}
+
+footer strong {
+	color: var(--white);
+	font-weight: 600;
+}
+
+/*--------------------------------------------------------------
+  # Fin Footer
+  --------------------------------------------------------------*/

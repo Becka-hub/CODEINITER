@@ -1,0 +1,82 @@
+:root {
+	--bg: #ebecf0;
+    --body: #131d28;
+    --white: rgb(236, 209, 181);
+    --black: #080808;
+    --green: rgb(0, 230, 0);
+    --marron: rgb(100, 54, 1);
+  }
+  
+  a {
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: var(--bg);
+    text-decoration: none;
+  }
+  
+  a:active, a:hover {
+    outline: 0 none;
+  }
+  
+  body, html {
+    background-color: var(--bg);
+    position: relative;
+    overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
+  }
+  #Passage{
+    height: 100vh;
+    width: 100%;
+    padding: 20px;
+  }
+  #Passage .content_passage .logo_doctopharme{
+    width: 250px;
+    height: 250px;
+  }
+  #Passage .content_passage .logo_doctopharme img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+  #Passage .content_passage .titre_passage h2{
+     font-size: 18px;
+     color: rgb(102, 102, 102);
+  }
+  #Passage .content_passage .bloc_champ_text{
+    display: flex;
+    margin-top: 30px;
+  }
+  #Passage .content_passage .bloc_champ_text .form-control{
+	background-color: var(--bg);
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+  }
+  #Passage .content_passage .bloc_champ_text .form-control:focus {
+		border: 2px solid var(--green);
+    box-shadow:none!important;
+  }
+  
+  #Passage .content_passage .bloc_champ_text button{
+    background-color: var(--green);
+    color: var(--white);
+    padding: 5px;
+    margin-left: 10px;
+	box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2);
+	transition: 0.5s;
+  }
+  #Passage .content_passage .bloc_champ_text button:hover{
+   margin-right: -20px;
+  }
+	#Passage .content_passage .btn-accueil{
+		background-color: var(--bg);
+		color: var(--marron);
+		padding-left: 10px;
+		padding-top: 5px;
+		padding-right: 10px;
+		padding-bottom: 5px;
+		font-weight: 600;
+		font-size: 15px;
+		box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2);
+	}

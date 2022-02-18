@@ -1,0 +1,1884 @@
+:root {
+	--bg: #0b1218;
+	--body: #131d28;
+	--white: rgb(255, 255, 255);
+	--black: #080808;
+	--green: rgb(0, 230, 0);
+	--marron: rgb(100, 54, 1);
+}
+
+a {
+	transition: all 0.3s ease 0s;
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--white);
+	text-decoration: none;
+}
+
+a:active, a:hover {
+	outline: 0 none;
+}
+
+body, html {
+	background-color: var(--body);
+	position: relative;
+	overflow-x: hidden;
+	font-family: "Poppins", sans-serif;
+}
+
+.WRAPPER {
+	display: flex;
+	width: 100%;
+	height: 100vh;
+}
+
+/*--------------------------------------------------------------
+  # SideBar
+  --------------------------------------------------------------*/
+
+.SIDEBAR {
+	position: fixed;
+	z-index: 1010;
+}
+
+.SIDEBAR .bg_shadow {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: var(--black);
+	opacity: 1;
+	transition: all 0.3s ease;
+	visibility: hidden;
+	z-index: 899;
+}
+
+/*--------------------------------------------------------------
+  # Sidebar_inner
+  --------------------------------------------------------------*/
+
+.sidebar_inner {
+	position: absolute;
+	left: 0;
+	z-index: 900;
+	height: auto;
+	transition: all 0.3s ease;
+	min-height: 100vh;
+	width: 16rem !important;
+	background: var(--bg) !important;
+}
+
+.sidebar_inner .sidebar_menu {
+	height: auto;
+}
+
+.sidebar_inner .sidebar_menu {
+	margin-bottom: 0 !important;
+	margin-top: 30px !important;
+}
+
+.sidebar_inner .sidebar_menu>li {
+	list-style: none;
+	margin-top: 10px;
+}
+
+.sidebar_inner .sidebar_menu>li>a {
+	padding: 8px 20px;
+	color: var(--white);
+	display: flex;
+	align-items: center;
+	position: relative;
+	margin-bottom: 1px;
+	font-size: 15px;
+	margin-left: -20px;
+	letter-spacing: 1px;
+	border-top-left-radius: 35px;
+	border-bottom-left-radius: 35px;
+	transition: 0.5s;
+}
+
+.sidebar_inner .sidebar_menu>li>a:hover, .sidebar_inner .sidebar_menu>li.active>a {
+	background: rgba(21, 255, 0, 0.29);
+	color: var(--white) !important;
+	border-top: 1px solid var(--green);
+	border-left: 1px solid var(--green);
+	border-bottom: 1px solid var(--green);
+	margin-left: -30px !important;
+}
+
+.sidebar_inner .sidebar_menu>li>a .icon {
+	margin-right: 15px;
+	font-size: 20px;
+}
+
+.sidebar_inner .closse {
+	font-size: 20px;
+	cursor: pointer;
+	color: var(--white);
+	background: rgba(21, 255, 0, 0.29);
+	border-radius: 50%;
+	border: 2px solid var(--white);
+	display: none;
+	margin-top: 15px;
+	margin-right: 15px;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+
+.sidebar_inner .closse:hover {
+	transform: scale(1.1);
+}
+
+.sidebar_inner .sidebar_logo {
+	margin: auto;
+	width: 100%;
+	padding-left: 25px;
+	padding-right: 25px;
+	margin-top: 20px;
+}
+
+.sidebar_inner .sidebar_logo img {
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+  # Fin Sidebar_inner
+  --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+  # Fin SideBar
+  --------------------------------------------------------------*/
+
+.CONTENT {
+	margin-left: 254px;
+	width: calc(100% - 224px);
+	transition: all 0.3s ease;
+}
+
+.hamburger {
+	font-size: 25px;
+	cursor: pointer;
+	color: var(--green);
+	margin-right: 20px;
+	display: none;
+}
+
+/*--------------------------------------------------------------
+  # Configuration responsive
+  --------------------------------------------------------------*/
+
+@media (max-width: 1024px) {
+	.sidebar_inner {
+		left: -300px;
+		transition: all 0.3s ease;
+	}
+	.CONTENT {
+		width: 100%;
+		margin-left: 0;
+	}
+	.navbar_content {
+		width: 100% !important;
+	}
+	.navbar_content .bloc_right .btn_deconnection .fa-power-off {
+		margin-right: 0px !important;
+	}
+	.sidebar_inner .closse, .hamburger {
+		display: block;
+	}
+	.WRAPPER.active .sidebar_inner {
+		left: 0;
+	}
+	.WRAPPER.active .bg_shadow {
+		visibility: visible;
+		opacity: 0.5;
+	}
+}
+
+/*--------------------------------------------------------------
+  # Fin Configuration responsive
+  --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+  # Content
+  --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+  # NavBar_content
+  --------------------------------------------------------------*/
+
+.navbar_content {
+	background: var(--bg) !important;
+	width: calc(100% - 224px);
+	height: 60px;
+	padding: 0 20px;
+	display: flex;
+	justify-content: space-between;
+	position: fixed;
+	z-index: 1000;
+}
+
+.navbar_content .bloc_left {
+	display: flex;
+	align-items: center;
+}
+
+.navbar_content .bloc_right {
+	display: flex;
+	align-items: center;
+}
+
+.navbar_content .bloc_right .btn_notification {
+	transition: 0.5s;
+}
+
+.navbar_content .bloc_right .btn_notification .badge {
+	background-color: rgb(3, 207, 3) !important;
+	font-size: 15px;
+	color: white;
+	border-radius: 50%;
+	width: 23px;
+	height: 23px;
+	padding-top: 4px;
+	z-index: 2000;
+	margin-right: -10px;
+	padding-right: 7px;
+}
+
+.navbar_content .bloc_right .btn_notification .fa-bell-o {
+	background: var(--white);
+	padding: 10px;
+	color: var(--green);
+	border-radius: 50%;
+	font-size: 15px;
+	transition: 0.5s;
+	margin-right: 30px;
+}
+
+.navbar_content .bloc_right .btn_notification:hover {
+	transform: scale(1.1);
+}
+
+.navbar_content .bloc_right .btn_deconnection .fa-power-off {
+	background: var(--white);
+	padding: 10px;
+	color: red;
+	border-radius: 50%;
+	font-size: 15px;
+	transition: 0.5s;
+	margin-right: 30px;
+}
+
+.navbar_content .bloc_right .btn_deconnection .fa-power-off:hover {
+	transform: scale(1.1);
+}
+
+.navbar_content .image_patient {
+	display: flex;
+}
+
+.navbar_content .image_patient img {
+	border-radius: 50%;
+	border: 2px solid var(--green);
+	width:35px;
+	height: 35px;
+}
+
+.navbar_content .image_patient h2 {
+	color: var(--white) !important;
+	font-weight: 600;
+	font-size: 18px !important;
+	margin-left: 5px;
+	letter-spacing: 1px;
+	margin-top: 10px;
+}
+
+#modal_notification .modal-content {
+	background-color: var(--bg) !important;
+	border: 3px double var(--white);
+}
+
+#modal_notification .modal-content .modal-header {
+	padding-top: 10px !important;
+	padding-bottom: 10px !important;
+}
+
+#modal_notification .modal-content h5 {
+	color: white;
+	font-size: 18px;
+	letter-spacing: 2px;
+	font-weight: 600;
+	color: var(--green);
+}
+
+#modal_notification .modal-content .close {
+	font-size: 20px;
+	color: var(--white);
+	opacity: 1;
+}
+
+#modal_notification .modal-content .modal-body {
+	padding: 10px;
+}
+
+#modal_notification .modal-content .modal-body .notification_content {
+	height: 80vh;
+}
+
+#modal_notification .modal-content .modal-body .media {
+	background-color: rgba(20, 255, 0, 0.1);
+}
+
+#modal_notification .modal-content .modal-body .media .notification_icons i {
+	font-size: 25px;
+	padding-top: 15px;
+	padding-left: 15px;
+	padding-bottom: 15px;
+	padding-right: 15px;
+	background-color: var(--white);
+	border-bottom-right-radius: 15px;
+	color: var(--green);
+}
+
+#modal_notification .modal-content .modal-body .media .media-body {
+	padding: 5px;
+}
+
+#modal_notification .modal-content .modal-body .media .media-body .media_body_header {
+	display: flex;
+	margin-bottom: 5px;
+}
+
+#modal_notification .modal-content .modal-body .media .media-body .media_body_header img {
+	border-radius: 50%;
+	border: 2px solid rgb(54, 54, 54);
+}
+
+#modal_notification .modal-content .modal-body .media .media-body .media_body_header h6 {
+	font-size: 15px;
+	margin-top: 9px;
+	margin-left: 6px;
+	font-weight: 600;
+	color: var(--white);
+}
+
+#modal_notification .modal-content .modal-body .media .media-body p {
+	font-size: 15px;
+	color: var(--white);
+}
+
+#modal_notification .modal-content .modal-body .media .media-body h6 {
+	font-size: 13px;
+	color: var(--white);
+}
+
+#modal_notification .modal-content .modal-body .media-body i {
+	color: var(--white) !important;
+	font-size: 15px !important;
+	background-color: none !important;
+}
+
+#modal_notification .modal-content .modal-body .notification_exclamation .media .notification_icons i {
+	background-color: var(--white) !important;
+	color: red;
+}
+
+#modal_notification .modal-content .modal-body .notification_exclamation .media_exclamation {
+	background-color: rgba(255, 0, 0, 0.1);
+}
+
+/*--------------------------------------------------------------
+  # Fin NavBar_content
+  --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+  # Profile_blocs
+  --------------------------------------------------------------*/
+
+#profile_blocs {
+	background-color: var(--body);
+	width: 100%;
+	height: 91vh;
+	animation-name: slideProfile;
+	animation-duration: 0.7s;
+	padding: 15px;
+	margin-top: 60px;
+}
+
+#profile_blocs .profile {
+	width: 100%;
+	height: 90vh;
+	background: var(--bg);
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+}
+
+#profile_blocs .profile .background_profile {
+	width: 100%;
+	height: 200px;
+	position: relative;
+}
+
+#profile_blocs .profile .background_profile img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-bottom-right-radius: 50px;
+	border-bottom-left-radius: 50px;
+	border-bottom: 5px solid rgba(21, 255, 0, 0.555);
+}
+
+#profile_blocs .profile .patient_photo {
+	width: 140px;
+	height: 140px;
+	position: relative;
+	margin-top: -83px;
+}
+
+#profile_blocs .profile .patient_photo img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	z-index: 999;
+	border: 5px solid rgba(21, 255, 0, 0.555);
+	object-fit: cover;
+}
+
+#profile_blocs .profile .patient_nom h2 {
+	color: var(--white);
+	font-size: 18px;
+	font-weight: 600;
+	font-family: monospace;
+	border: 3px double var(--green);
+	width: 300px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-top: 15px;
+}
+
+#profile_blocs .profile .patient_description i {
+	color: var(--green);
+	font-size: 18px;
+}
+
+#profile_blocs .profile .patient_description p {
+	text-align: justify;
+	color: var(--white);
+	font-size: 15px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	box-shadow: 0px 0px 2px var(--green);
+	margin-top: 5px;
+}
+
+#profile_blocs .astuce_profile {
+	width: 100%;
+	height: 90vh;
+	background: var(--bg);
+	padding: 15px;
+}
+
+#profile_blocs .astuce_profile h6 {
+	color: var(--white);
+	font-size: 17px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background: rgba(21, 255, 0, 0.555);
+	letter-spacing: 1px;
+}
+
+#profile_blocs .astuce_profile p {
+	text-align: justify;
+	color: var(--white);
+	margin-top: 10px;
+	font-size: 15px !important;
+}
+
+@keyframes slideProfile {
+	0% {
+		transform: translateX(-1500px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+/*--------------------------------------------------------------
+  # Fin Profile_blocs
+  --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+  # Consultation_blocs
+  --------------------------------------------------------------*/
+
+#consultation_blocs {
+	display: none;
+	width: 100%;
+	height: 91vh;
+	animation-name: slideConsultation;
+	animation-duration: 0.7s;
+	background-color: var(--body);
+	padding: 15px;
+	margin-top: 60px;
+}
+
+#consultation_blocs .consultation {
+	width: 100%;
+	height: 90vh;
+	background: var(--bg);
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#consultation_blocs .consultation .corps_consultation {
+	width: 100%;
+	height: 84vh;
+	border: 3px double rgba(21, 255, 0, 0.555);
+	border-radius: 10px;
+	padding: 15px;
+}
+
+#consultation_blocs .consultation .corps_consultation .profile_consultation {
+	display: flex;
+}
+
+#consultation_blocs .consultation .corps_consultation .profile_consultation img {
+	border-radius: 50%;
+	border: 2px solid var(--green);
+	height: 35px;
+	width: 35px;
+}
+
+#consultation_blocs .consultation .corps_consultation .profile_consultation h6 {
+	color: var(--white);
+	margin-top: 10px;
+	margin-left: 8px;
+}
+
+#consultation_blocs .consultation .corps_consultation .body_consultation {
+	margin-top: 10px;
+	width: 100%;
+	height: 64vh;
+	box-shadow: inset 8px 8px 8px #070b0f, inset -8px -8px 8px var(--body);
+	border-radius: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#consultation_blocs .consultation .corps_consultation .body_consultation .body_content_consultation .body_message_envoyer {
+	width: 60%;
+}
+
+#consultation_blocs .consultation .corps_consultation .body_consultation .body_content_consultation .body_message_envoyer .message_envoyer {
+	background: var(--white)!important;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+#consultation_blocs .consultation .corps_consultation .body_consultation .body_content_consultation .body_message_envoyer .message_envoyer .text_consultation {
+	color: var(--marron);
+	font-weight: 600;
+	font-size: 15px;
+}
+
+#consultation_blocs .consultation .corps_consultation .body_consultation .body_content_consultation .body_message_reponse {
+	width: 60%;
+}
+
+#consultation_blocs .consultation .corps_consultation .body_consultation .body_content_consultation .body_message_reponse .message_reponse .envoye_reponse {
+	display: flex;
+}
+
+#consultation_blocs .consultation .corps_consultation .body_consultation .body_content_consultation .body_message_reponse .message_reponse .envoye_reponse h6 {
+	font-size: 12px;
+	color: var(--white);
+	margin-top: 17px;
+	margin-left: 7px;
+}
+
+#consultation_blocs .consultation .corps_consultation .body_consultation .body_content_consultation .body_message_reponse .message_reponse .content_reponse {
+	background: var(--green)!important;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+#consultation_blocs .consultation .corps_consultation .body_consultation .body_content_consultation .body_message_reponse .message_reponse .text_consultation {
+	color: var(--white);
+	font-size: 15px;
+	font-weight: 600;
+}
+
+#consultation_blocs .consultation .corps_consultation .body_consultation .body_content_consultation .body_message_reponse .message_reponse .content_ordonance {
+	display: flex;
+}
+
+#consultation_blocs .consultation .corps_consultation .body_consultation .body_content_consultation .body_message_reponse .message_reponse .content_ordonance .ordonance {
+	display: flex;
+	padding-bottom: 10px;
+}
+
+#consultation_blocs .consultation .corps_consultation .body_consultation .body_content_consultation .body_message_reponse .message_reponse .content_ordonance .ordonance {
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	background-color: rgb(26, 26, 26);
+	border: 1px solid var(--green);
+	height: 32px;
+}
+
+#consultation_blocs .consultation .corps_consultation .body_consultation .body_content_consultation .body_message_reponse .message_reponse .content_ordonance .ordonance h6 {
+	font-size: 15px;
+	color: var(--white);
+	margin-right: 10px;
+}
+
+#consultation_blocs .consultation .corps_consultation .body_consultation .body_content_consultation .body_message_reponse .message_reponse .content_ordonance .ordonance i {
+	color: var(--green)!important;
+}
+
+#consultation_blocs .consultation .corps_consultation .body_consultation .body_content_consultation .body_message_reponse .message_reponse .content_ordonance .download_ordonance i {
+	margin-left: 20px;
+	font-size: 20px;
+	padding: 6px;
+	background: var(--white)!important;
+	border: 2px solid var(--green);
+	border-radius: 50%;
+	transition: 0.5s;
+	margin-top: -3px;
+	color: rgb(26, 26, 26)!important;
+}
+
+#consultation_blocs .consultation .corps_consultation .body_consultation .body_content_consultation .body_message_reponse .message_reponse .content_ordonance .download_ordonance i:hover {
+	transform: scale(1.1);
+}
+
+#consultation_blocs .consultation .corps_consultation .body_consultation .body_content_consultation .message_reponse img {
+	border-radius: 50%;
+	border: 2px solid var(--white);
+}
+
+#consultation_blocs .consultation .corps_consultation .consultation_form {
+	display: flex;
+}
+
+#consultation_blocs .consultation .corps_consultation .input_consultation {
+	width: 100%;
+}
+
+#consultation_blocs .consultation .corps_consultation .input_consultation .form-group input {
+	height: 40px;
+	width: 100%;
+	border: none;
+	outline: none;
+	background: var(--white);
+	border-radius: 5px;
+	font-size: 15px;
+	padding-left: 10px;
+	box-shadow: inset 8px 8px 8px #8e8e8e, inset -8px -8px 8px var(--white);
+	margin-top: 4px;
+}
+
+#consultation_blocs .consultation .corps_consultation .consultation_form .btn-consultation {
+	width: 40px;
+	border-radius: 5px;
+	font-weight: normal;
+	color: var(--white);
+	margin-top: 4px !important;
+	padding-top: 8px !important;
+	background: rgba(21, 255, 0, 0.29);
+	border: 1px solid var(--green);
+}
+
+#consultation_blocs .consultation .corps_consultation .consultation_form .btn-consultation i {
+	font-size: 23px;
+}
+
+#consultation_blocs ::-webkit-input-placeholder {
+	color: grey;
+	opacity: 1;
+}
+
+#consultation_blocs :-ms-input-placeholder {
+	color: grey;
+	opacity: 1;
+}
+
+#consultation_blocs ::-moz-placeholder {
+	color: grey;
+	opacity: 1;
+}
+
+#consultation_blocs :-moz-placeholder {
+	color: grey;
+	opacity: 1;
+}
+
+#consultation_blocs .astuce_consultation {
+	width: 100%;
+	height: 90vh;
+	background: var(--bg);
+	padding: 15px;
+}
+
+#consultation_blocs .astuce_consultation h6 {
+	color: var(--white);
+	font-size: 17px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background: rgba(21, 255, 0, 0.555);
+	letter-spacing: 1px;
+}
+
+#consultation_blocs .astuce_consultation p {
+	text-align: justify;
+	color: var(--white);
+	margin-top: 10px;
+	font-size: 15px !important;
+}
+
+#consultation_blocs .astuce_consultation .image_astuce {
+	width: 95%;
+	padding: 10px;
+}
+
+#consultation_blocs .astuce_consultation .image_astuce img {
+	width: 100%;
+}
+
+@keyframes slideConsultation {
+	0% {
+		transform: translateX(-1500px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+/*--------------------------------------------------------------
+  # Fin Consultation_blocs
+  --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+  # Docteur_blocs
+  --------------------------------------------------------------*/
+
+#docteur_blocs {
+	background-color: var(--body);
+	padding: 15px;
+	margin-top: 60px;
+	display: none;
+	width: 100%;
+	height: 91vh;
+	animation-name: slideDocteur;
+	animation-duration: 0.7s;
+}
+
+#docteur_blocs .docteur {
+	width: 100%;
+	height: 90vh;
+	background: var(--bg);
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+}
+
+#docteur_blocs .docteur .recherche_docteur {
+	padding-top: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 10px;
+}
+
+#docteur_blocs .docteur .recherche_docteur select {
+	color: var(--white);
+	border: 1px solid var(--green);
+	background: transparent !important;
+	font-weight: 600;
+}
+
+#docteur_blocs .docteur .recherche_docteur select:focus {
+	box-shadow: 0px 1px 7px var(--green);
+}
+
+#docteur_blocs .docteur .recherche_docteur option {
+	background: var(--white) !important;
+	color: var(--black);
+}
+
+#docteur_blocs .docteur .recherche_docteur #regionDoctor {
+	display: none;
+}
+
+#docteur_blocs .docteur .recherche_docteur #districtDoctor {
+	display: none;
+}
+
+#docteur_blocs .docteur .recherche_docteur #communeDoctor {
+	display: none;
+}
+
+#docteur_blocs .docteur .content_docteur {
+	width: 100%;
+	height: 75vh;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+}
+
+#docteur_blocs .docteur .content_docteur .card_docteur {
+	padding: 10px;
+	background: linear-gradient(-120deg, var(--white), var(--bg)) !important;
+	margin-top: 15px;
+	transition: 0.5s;
+}
+
+#docteur_blocs .docteur .content_docteur .card_docteur:hover {
+	transform: translateY(-10px);
+}
+
+#docteur_blocs .docteur .content_docteur .card_docteur_image {
+	width: 100%;
+	height: 200px;
+}
+
+#docteur_blocs .docteur .content_docteur .card_docteur_image img {
+	width: 100%;
+	object-fit: fill;
+	height: 100%;
+}
+
+#docteur_blocs .docteur .content_docteur .card_docteur_txt h4 {
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	font-family: sans-serif;
+	background-color: var(--bg);
+	border: 2px solid var(--green);
+	color: var(--white);
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 7px;
+	margin-top: 5px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+
+#docteur_blocs .docteur .content_docteur .card_docteur_txt a {
+	background-color: rgb(1, 165, 1) !important;
+	color: var(--white);
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	transition: 0.5s;
+	margin-bottom: -20px;
+}
+
+#docteur_blocs .docteur .content_docteur .card_docteur_txt p {
+	color: var(--white);
+	font-size: 15px;
+}
+
+#docteur_blocs .docteur .modal_docteur .modal-content {
+	background-color: var(--bg) !important;
+	border: 3px double var(--white) !important;
+}
+
+#docteur_blocs .docteur .modal_docteur .modal-content .modal-body .modal_docteur_image {
+	width: 100%;
+	height: 400px;
+}
+
+#docteur_blocs .docteur .modal_docteur .modal-content .modal-body .modal_docteur_image img {
+	width: 100%;
+	height: 100%;
+	object-fit: fill;
+	border: 5px double var(--green);
+}
+
+#docteur_blocs .docteur .modal_docteur .modal-content .modal-body .modal_docteur_description {
+	margin-top: 5px;
+}
+
+#docteur_blocs .docteur .modal_docteur .modal-content .modal-body .modal_docteur_description h6 {
+	font-size: 15px;
+	color: var(--white);
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#docteur_blocs .docteur .modal_docteur .modal-content .modal-body .modal_docteur_text p {
+	font-size: 15px;
+	color: var(--white);
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	text-align: justify;
+}
+
+#docteur_blocs .docteur .modal_docteur .modal-content .modal-footer {
+	padding-top: 10px !important;
+	padding-bottom: 10px !important;
+	background: var(--bg) !important;
+}
+
+#docteur_blocs .docteur .modal_docteur .modal-content .modal-footer button {
+	background: rgba(21, 255, 0, 0.29);
+	color: var(--white);
+	font-size: 15px;
+	font-weight: 600;
+	min-height: 35px;
+	border-radius: 5px;
+	transition: 0.5s;
+	border: 1px solid var(--green);
+}
+
+#docteur_blocs .docteur .modal_docteur .modal-content .modal-footer button:hover {
+	transform: scale(1.1);
+}
+
+#docteur_blocs .docteur .modal_docteur .modal-content .modal-footer button:focus {
+	color: var(--green);
+}
+
+@keyframes slideDocteur {
+	0% {
+		transform: translateX(-1500px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+/*--------------------------------------------------------------
+  # Fin Docteur_blocs
+  --------------------------------------------------------------*/
+
+  /*--------------------------------------------------------------
+  # Médicament_blocs
+  --------------------------------------------------------------*/
+  #medicament_blocs {
+	background-color: var(--body);
+	padding: 15px;
+	margin-top: 60px;
+	display: none;
+	width: 100%;
+	height: 91vh;
+	animation-name: slideMedicament;
+	animation-duration: 0.7s;
+}
+
+#medicament_blocs .medicament {
+	width: 100%;
+	height: 90vh;
+	background: var(--bg);
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+}
+#medicament_blocs .medicament .recherche_medicament{
+	width:60%;
+}
+#medicament_blocs .medicament .recherche_medicament .form-control{
+	font-size: 15px;
+	min-height: 45px;
+	font-weight: 500;
+	margin-top: 20px;
+	background: transparent;
+	border: 2px solid var(--green);
+	border-radius: 30px;
+	color: var(--white);
+}
+#medicament_blocs .medicament .recherche_medicament .form-control:focus{
+	box-shadow: 0px 1px 7px var(--green);
+}
+#medicament_blocs .medicament .content_medicament{
+	margin:8px;
+	padding:5px;
+}
+#medicament_blocs .medicament .content_medicament .liste_medicament{
+	height:74vh;
+}
+#medicament_blocs .medicament .content_medicament .card{
+transition:0.5s;
+margin-top:10px;
+margin-bottom:10px;
+background: linear-gradient(-120deg, var(--white), var(--bg)) !important;
+}
+#medicament_blocs .medicament .content_medicament .card:hover{
+	margin-top:20px;
+}
+#medicament_blocs .medicament .content_medicament .card .card_image{
+ padding-top:8px;
+ padding-left:8px;
+ padding-right:8px;
+  padding-bottom:5px;
+ width:100%;
+ height:180px;
+}
+#medicament_blocs .medicament .content_medicament .card .card_image img{
+	width:100%;
+	height:100%;
+	object-fit: cover;
+}
+#medicament_blocs .medicament .content_medicament .card .card-body{
+	padding: 8px!important;
+}
+#medicament_blocs .medicament .content_medicament .card .card-body h5{
+font-weight:600;
+color: var(--white);
+}
+
+#medicament_blocs .medicament .content_medicament .card .card-body .pharmacie_medicament{
+	background-color: var(--bg);
+	border: 2px solid var(--green);
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	margin-top: 5px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+#medicament_blocs .medicament .content_medicament .card .card-body .pharmacie_contenue{
+	color: var(--green);
+	font-size:15px;
+	text-transform:uppercase;
+	font-weight:600;
+}
+#medicament_blocs .medicament .content_medicament .card .card-body .pharmacie_province{
+	font-size:15px;
+	text-transform:uppercase;
+	font-weight:600;
+	color: var(--white);
+}
+#medicament_blocs .medicament .content_medicament .card .card-body .btn_card{
+	display:flex;
+	justify-content:space-between;
+	margin-top:15px;
+}
+#medicament_blocs .medicament .content_medicament .card .card-body .btn_card .btn_voir{
+	background:var(--marron);
+	color:var(--white);
+	font-size:15px;
+	padding-top:5px;
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom:5px;
+}
+#medicament_blocs .medicament .content_medicament .card .card-body .btn_card .btn_voir:focus{
+	box-shadow:none!important;
+}
+#medicament_blocs .medicament .content_medicament .card .card-body .btn_card .btn_suivre{
+	background:var(--green);
+	color:var(--white);
+	font-size:15px;
+	padding-top:5px;
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom:5px;
+}
+#medicament_blocs .medicament .content_medicament .card .card-body .btn_card .btn_suivre a{
+	text-decoration:none!important;
+	color: var(--white);
+}
+#medicament_blocs .medicament .content_medicament .card .card-body .btn_card .btn_suivre:focus{
+	box-shadow:none!important;
+}
+#medicament_blocs .medicament #modal_medicament .modal-content{
+	border:3px double var(--white)!important;
+	background-color: var(--bg);
+}
+#medicament_blocs .medicament #modal_medicament .modal-content .modal-header{
+	padding: 10px!important;
+}
+#medicament_blocs .medicament #modal_medicament .modal-content .modal-header h5{
+	color: var(--green);
+	font-size:15px;
+	text-transform:uppercase;
+	font-weight:600;
+}
+#medicament_blocs .medicament #modal_medicament .modal-content .modal-header .close{
+  opacity:1!important;
+  color:var(--white);
+}
+#medicament_blocs .medicament #modal_medicament .modal-content .modal-body{
+	padding: 20px!important;
+}
+#medicament_blocs .medicament #modal_medicament .modal-content .modal-body .image_medicament{
+	width:100%;
+	height: 300px;
+}
+#medicament_blocs .medicament #modal_medicament .modal-content .modal-body .image_medicament img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+#medicament_blocs .medicament #modal_medicament .modal-content .modal-body .description_medicament h5{
+	background-color: var(--green);
+	color: var(--white);
+	text-transform: uppercase;
+	font-size: 15px;
+	font-weight: 600;
+	padding: 6px;
+}
+#medicament_blocs .medicament #modal_medicament .modal-content .modal-body .description_medicament p{
+	font-size: 15px;
+	color: var(--white);
+}
+#medicament_blocs .medicament #modal_medicament .modal-content .modal-body .description_medicament h6{
+	font-size: 15px;
+	color: var(--white);
+}
+#medicament_blocs .medicament #modal_medicament .modal-content .modal-body .description_medicament .nom_pharmacie{
+	padding: 6px;
+	background-color: var(--marron);
+	color: var(--white);
+	margin-top:30px;
+}
+
+@keyframes slideMedicament {
+	0% {
+		transform: translateX(-1500px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+  /*--------------------------------------------------------------
+  # Fin Médicament_blocs
+  --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+  # Pharmacie_blocs
+  --------------------------------------------------------------*/
+
+.pharmacie_blocs {
+	background-color: var(--body);
+	width: 100%;
+	height: 91vh;
+	display: none;
+	padding: 15px;
+	margin-top: 60px;
+	animation-name: slidePharmacie;
+	animation-duration: 0.7s;
+}
+
+.pharmacie_blocs .pharmacie {
+	width: 100%;
+	height: 90vh;
+	background: var(--bg);
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+}
+
+.pharmacie_blocs .pharmacie .recherche_pharmacie {
+	padding-top: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 10px;
+}
+
+.pharmacie_blocs .pharmacie .recherche_pharmacie select {
+	color: var(--white);
+	border: 1px solid var(--green);
+	background: transparent!important;
+	font-weight: 600;
+}
+
+.pharmacie_blocs .pharmacie .recherche_pharmacie select:focus {
+	box-shadow: 0px 1px 7px var(--green);
+}
+
+.pharmacie_blocs .pharmacie .recherche_pharmacie option {
+	background: var(--white) !important;
+	color: var(--black);
+}
+
+.pharmacie_blocs .pharmacie .recherche_pharmacie #regionPharmacie {
+	display: none;
+}
+
+.pharmacie_blocs .pharmacie .recherche_pharmacie #districtPharmacie {
+	display: none;
+}
+
+.pharmacie_blocs .pharmacie .recherche_pharmacie #communePharmacie {
+	display: none;
+}
+
+.pharmacie_blocs .pharmacie .content_pharmacie {
+	width: 100%;
+	height: 75vh;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+}
+
+.pharmacie_blocs .pharmacie .content_pharmacie .card_pharmacie {
+	padding: 5px;
+	background: linear-gradient(-120deg, var(--white), var(--bg)) !important;
+	margin-top: 95px;
+	border-radius: 8px;
+	transition: 0.5s;
+}
+
+.pharmacie_blocs .pharmacie .content_pharmacie .card_pharmacie:hover>.card_image img {
+	transform: scale(1.1);
+}
+
+.pharmacie_blocs .pharmacie .content_pharmacie .card_pharmacie .card_image {
+	padding: 30px;
+	width: 100%;
+	height: 223px;
+	margin-top: -116px;
+}
+
+.pharmacie_blocs .pharmacie .content_pharmacie .card_pharmacie .card_image img {
+	width: 100%;
+	height: 100%;
+	object-fit: fill;
+	border-radius: 8px;
+	border: 2px solid var(--green);
+	transition: 0.5s;
+}
+
+.pharmacie_blocs .pharmacie .content_pharmacie .card_pharmacie .card_pharmacie_content {
+	margin-top: -20px;
+}
+
+.pharmacie_blocs .pharmacie .content_pharmacie .card_pharmacie .card_pharmacie_content .description_pharmacie {
+	background-color: var(--bg);
+	border: 2px solid var(--green);
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	margin-top: 5px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+
+.pharmacie_blocs .pharmacie .content_pharmacie .card_pharmacie .card_pharmacie_content .description_pharmacie h4 {
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	font-family: sans-serif;
+	color: var(--white);
+}
+
+.pharmacie_blocs .pharmacie .content_pharmacie .card_pharmacie .card_pharmacie_content .description_pharmacie .type_pharmacie {
+	color: var(--white);
+	font-size: 15px;
+	margin-top: 5px;
+	font-weight: 600;
+}
+
+.pharmacie_blocs .pharmacie .content_pharmacie .card_pharmacie .card_pharmacie_content h6 {
+	font-size: 15px;
+	color: var(--white);
+	font-family: sans-serif;
+	margin-left: 5px;
+}
+
+.pharmacie_blocs .pharmacie .content_pharmacie .card_pharmacie .card_pharmacie_content .fa-medkit {
+	margin-right: 0px!important
+}
+
+.pharmacie_blocs .pharmacie .content_pharmacie .card_pharmacie .card_pharmacie_content h6 i {
+	color: var(--green);
+	font-size: 15px;
+	margin-right: 10px;
+}
+
+.pharmacie_blocs .pharmacie .content_pharmacie .card_pharmacie .card_pharmacie_content .fa-map-marker {
+	font-size: 17px!important;
+	margin-left: 2px;
+}
+
+.pharmacie_blocs .pharmacie .content_pharmacie .card_pharmacie .card_pharmacie_content a {
+	background-color: rgb(1, 165, 1) !important;
+	color: var(--white);
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-bottom: -20px;
+	font-size: 15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	transition: 0.5s;
+}
+
+@keyframes slidePharmacie {
+	0% {
+		transform: translateX(-1500px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+/*--------------------------------------------------------------
+  # Fin Pharmacie_blocs
+  --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+  # Clinique_blocs
+  --------------------------------------------------------------*/
+
+.clinique_blocs {
+	background-color: var(--body);
+	width: 100%;
+	height: 91vh;
+	display: none;
+	padding: 15px;
+	margin-top: 60px;
+	animation-name: slideClinique;
+	animation-duration: 0.7s;
+}
+
+.clinique_blocs .clinique {
+	width: 100%;
+	height: 90vh;
+	background: var(--bg);
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+}
+
+.clinique_blocs .clinique .recherche_clinique {
+	padding-top: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 10px;
+}
+
+.clinique_blocs .clinique .recherche_clinique select {
+	color: var(--white);
+	border: 1px solid var(--green);
+	background: transparent !important;
+	font-weight: 600;
+}
+
+.clinique_blocs .clinique .recherche_clinique select:focus {
+	box-shadow: 0px 1px 7px var(--green);
+}
+
+.clinique_blocs .clinique .recherche_clinique option {
+	background: var(--white) !important;
+	color: var(--black);
+}
+
+.clinique_blocs .clinique .recherche_clinique #regionClinique {
+	display: none;
+}
+
+.clinique_blocs .clinique .recherche_clinique #districtClinique {
+	display: none;
+}
+
+.clinique_blocs .clinique .recherche_clinique #communeClinique {
+	display: none;
+}
+
+.clinique_blocs .clinique .content_clinique {
+	width: 100%;
+	height: 75vh;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+	padding-top: 10px;
+}
+
+.clinique_blocs .clinique .content_clinique .card_clinique {
+	margin-bottom: 30px;
+	margin-left: 10px;
+	margin-right: 10px;
+	background: linear-gradient(-120deg, var(--white), var(--bg)) !important;
+	border-radius: 8px;
+	transition: 0.5s;
+}
+
+.clinique_blocs .clinique .content_clinique .card_clinique:hover {
+	transform: translateY(-10px);
+}
+
+.clinique_blocs .clinique .content_clinique .card_clinique .card_clinique_image {
+	width: 100%;
+	height: 200px;
+}
+
+.clinique_blocs .clinique .content_clinique .card_clinique .card_clinique_image img {
+	width: 100%;
+	object-fit: fill;
+	height: 100%;
+	border-bottom-left-radius: 22px;
+	border-bottom-right-radius: 22px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+
+.clinique_blocs .clinique .content_clinique .card_clinique .card_clinique_content {
+	padding: 10px;
+}
+
+.clinique_blocs .clinique .content_clinique .card_clinique .card_clinique_content .description_clinique {
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 0px;
+	margin-top: 5px;
+	background-color: var(--bg);
+	border: 2px solid var(--green);
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+
+.clinique_blocs .clinique .content_clinique .card_clinique .card_clinique_content h4 {
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	font-family: sans-serif;
+	color: var(--white);
+}
+
+.clinique_blocs .clinique .content_clinique .card_clinique .card_clinique_content a {
+	background-color: rgb(1, 165, 1) !important;
+	color: var(--white);
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-bottom: -20px;
+	font-size: 15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	transition: 0.5s;
+}
+
+.clinique_blocs .clinique .content_clinique .card_clinique .card_clinique_content h6 {
+	color: var(--white);
+	font-size: 15px;
+	margin-top: 10px;
+}
+
+.clinique_blocs .clinique .content_clinique .card_clinique .card_clinique_content .fa-plus-square {
+	margin-right: 0!important;
+}
+
+.clinique_blocs .clinique .content_clinique .card_clinique .card_clinique_content h6 i {
+	color: var(--green);
+	font-size: 15px;
+	margin-right: 10px;
+}
+
+.clinique_blocs .clinique .content_clinique .card_clinique .card_clinique_content .fa-map-marker {
+	font-size: 17px!important;
+	margin-left: 2px;
+}
+
+.clinique_blocs .clinique .content_clinique .card_clinique .card_clinique_content .specialise_clinique {
+	color: var(--white);
+	font-size: 15px;
+	margin-top: 5px;
+	font-weight: 600;
+}
+
+@keyframes slideClinique {
+	0% {
+		transform: translateX(-1500px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+/*--------------------------------------------------------------
+  # Fin Clinique_blocs
+  --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+  # Apropos_blocs
+  --------------------------------------------------------------*/
+
+.apropos_blocs {
+	background-color: var(--body);
+	width: 100%;
+	height: 91vh;
+	display: none;
+	padding: 15px;
+	margin-top: 60px;
+	animation-name: slideApropos;
+	animation-duration: 0.7s;
+}
+.apropos_blocs .apropos{
+	width: 100%;
+	height: 90vh;
+	background: var(--bg);
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+}
+.apropos_blocs .apropos .content-apropos .logoApropos{
+	width: 200px;
+	height: 200px;
+}
+.apropos_blocs .apropos .content-apropos .logoApropos img{
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+.apropos_blocs .apropos .content-apropos .articleApropos{
+	border: 3px double var(--white);
+	padding: 20px;
+	margin-top: 20px;
+}
+.apropos_blocs .apropos .content-apropos .articleApropos p{
+	font-size: 15px;
+	color: var(--green);
+	font-weight: 600;
+	text-align: justify;
+}
+.apropos_blocs .apropos .content-apropos .articleApropos .photoFonctinnalite{
+	margin-top: 30px;
+} 
+.apropos_blocs .apropos .content-apropos .articleApropos .photoFonctinnalite .image{
+	width: 100px;
+	height: 100px;
+	background-color: var(--white);
+	border-radius: 50%;
+	border: 3px solid var(--green);
+}
+.apropos_blocs .apropos .content-apropos .articleApropos .photoFonctinnalite .image img{
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	transition: 0.5s;
+}
+.apropos_blocs .apropos .content-apropos .articleApropos .photoFonctinnalite .image img:hover{
+	transform: scale(1.5);
+}
+@keyframes slideApropos {
+	0% {
+		transform: translateX(-1500px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+/*--------------------------------------------------------------
+  # Fin Apropos_blocs
+  --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+  # Fin Content
+  --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+  # Responsive
+  --------------------------------------------------------------*/
+
+@media (min-width: 1200px) {
+
+
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+	#profile_blocs{
+		height: auto!important;
+	}
+	#profile_blocs .profile{
+		height: auto!important;
+	}
+	#profile_blocs .astuce_profile{
+		height: auto!important;
+	}
+	#consultation_blocs{
+		height: auto!important;
+	}
+	#consultation_blocs .consultation {
+		height: auto!important;
+	}
+	#consultation_blocs .consultation .corps_consultation {
+		height: auto!important;
+	}
+	#consultation_blocs .astuce_consultation {
+		height: auto!important;
+	}
+	#docteur_blocs {
+		height: auto!important;
+	}
+	#docteur_blocs .docteur{
+		height: auto!important;
+	}
+	#medicament_blocs{
+		height: auto!important;
+	}
+	#medicament_blocs .medicament {
+		height: auto!important;
+	}
+	.pharmacie_blocs{
+		height: auto!important;
+	}
+	.pharmacie_blocs .pharmacie{
+		height: auto!important;
+	}
+	.clinique_blocs .clinique{
+		height: auto!important;
+	}
+	.apropos_blocs{
+		height: auto!important;
+	}
+	.apropos_blocs .apropos{
+		height: auto!important;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+	#profile_blocs{
+		height: auto!important;
+	}
+	#profile_blocs .profile{
+		height: auto!important;
+	}
+	#profile_blocs .astuce_profile{
+		height: auto!important;
+	}
+	#consultation_blocs{
+		height: auto!important;
+	}
+	#consultation_blocs .consultation {
+		height: auto!important;
+	}
+	#consultation_blocs .consultation .corps_consultation {
+		height: auto!important;
+	}
+	#consultation_blocs .astuce_consultation {
+		height: auto!important;
+	}
+	#docteur_blocs {
+		height: auto!important;
+	}
+	#docteur_blocs .docteur{
+		height: auto!important;
+	}
+	#medicament_blocs{
+		height: auto!important;
+	}
+	#medicament_blocs .medicament {
+		height: auto!important;
+	}
+	.pharmacie_blocs{
+		height: auto!important;
+	}
+	.pharmacie_blocs .pharmacie{
+		height: auto!important;
+	}
+	.clinique_blocs .clinique{
+		height: auto!important;
+	}
+	.apropos_blocs{
+		height: auto!important;
+	}
+	.apropos_blocs .apropos{
+		height: auto!important;
+	}
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+	#profile_blocs{
+		height: auto!important;
+	}
+	#profile_blocs .profile{
+		height: auto!important;
+	}
+	#profile_blocs .astuce_profile{
+		height: auto!important;
+	}
+	#consultation_blocs{
+		height: auto!important;
+	}
+	#consultation_blocs .consultation {
+		height: auto!important;
+	}
+	#consultation_blocs .consultation .corps_consultation {
+		height: auto!important;
+	}
+	#consultation_blocs .astuce_consultation {
+		height: auto!important;
+	}
+	#docteur_blocs {
+		height: auto!important;
+	}
+	#docteur_blocs .docteur{
+		height: auto!important;
+	}
+	#medicament_blocs{
+		height: auto!important;
+	}
+	#medicament_blocs .medicament {
+		height: auto!important;
+	}
+	.pharmacie_blocs{
+		height: auto!important;
+	}
+	.pharmacie_blocs .pharmacie{
+		height: auto!important;
+	}
+	.clinique_blocs .clinique{
+		height: auto!important;
+	}
+	.apropos_blocs{
+		height: auto!important;
+	}
+	.apropos_blocs .apropos{
+		height: auto!important;
+	}
+}
+
+@media (min-width: 376px) and (max-width: 575.98px) {
+	.navbar_content .image_patient h2 {
+        display: none!important;
+	}
+	#profile_blocs{
+		height: auto!important;
+	}
+	#profile_blocs .profile{
+		height: auto!important;
+	}
+	#profile_blocs .astuce_profile{
+		height: auto!important;
+	}
+	#consultation_blocs{
+		height: auto!important;
+	}
+	#consultation_blocs .consultation {
+		height: auto!important;
+	}
+	#consultation_blocs .consultation .corps_consultation .body_consultation .body_content_consultation .body_message_envoyer {
+		width: 80%!important;
+	}
+	
+	#consultation_blocs .consultation .corps_consultation .body_consultation .body_content_consultation .body_message_reponse {
+		width: 80%!important;
+	}
+	#consultation_blocs .consultation .corps_consultation {
+		height: auto!important;
+	}
+	#consultation_blocs .astuce_consultation {
+		height: auto!important;
+	}
+	#docteur_blocs {
+		height: auto!important;
+	}
+	#docteur_blocs .docteur{
+		height: auto!important;
+	}
+	#medicament_blocs{
+		height: auto!important;
+	}
+	#medicament_blocs .medicament {
+		height: auto!important;
+	}
+	.pharmacie_blocs{
+		height: auto!important;
+	}
+	.pharmacie_blocs .pharmacie{
+		height: auto!important;
+	}
+	.clinique_blocs .clinique{
+		height: auto!important;
+	}
+	.apropos_blocs{
+		height: auto!important;
+	}
+	.apropos_blocs .apropos{
+		height: auto!important;
+	}
+}
+
+@media (min-width: 320px) and (max-width: 375.98px) {
+	.navbar_content .image_patient h2 {
+        display: none!important;
+	}
+	#profile_blocs{
+		height: auto!important;
+	}
+	#profile_blocs .profile{
+		height: auto!important;
+	}
+	#profile_blocs .astuce_profile{
+		height: auto!important;
+	}
+	#consultation_blocs{
+		height: auto!important;
+	}
+	#consultation_blocs .consultation {
+		height: auto!important;
+	}
+	#consultation_blocs .consultation .corps_consultation .body_consultation .body_content_consultation .body_message_envoyer {
+		width: 80%!important;
+	}
+	
+	#consultation_blocs .consultation .corps_consultation .body_consultation .body_content_consultation .body_message_reponse {
+		width: 80%!important;
+	}
+	#consultation_blocs .consultation .corps_consultation {
+		height: auto!important;
+	}
+	#consultation_blocs .astuce_consultation {
+		height: auto!important;
+	}
+	#docteur_blocs {
+		height: auto!important;
+	}
+	#docteur_blocs .docteur{
+		height: auto!important;
+	}
+	#medicament_blocs{
+		height: auto!important;
+	}
+	#medicament_blocs .medicament {
+		height: auto!important;
+	}
+	.pharmacie_blocs{
+		height: auto!important;
+	}
+	.pharmacie_blocs .pharmacie{
+		height: auto!important;
+	}
+	.clinique_blocs .clinique{
+		height: auto!important;
+	}
+	.apropos_blocs{
+		height: auto!important;
+	}
+	.apropos_blocs .apropos{
+		height: auto!important;
+	}
+}
+
+/*--------------------------------------------------------------
+  # Fin Responsive
+  --------------------------------------------------------------*/

@@ -1,0 +1,1729 @@
+:root {
+	--bg: #ebecf0;
+	--white: rgb(255, 255, 255);
+	--black: #464646;
+	--green: rgb(0, 196, 0);
+	--marron: rgb(100, 54, 1);
+}
+
+a {
+	transition: all 0.3s ease 0s;
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--white);
+	text-decoration: none;
+}
+
+a:active, a:hover {
+	outline: 0 none;
+}
+
+body, html {
+	background-color: var(--bg);
+	position: relative;
+	overflow-x: hidden;
+	font-family: "Poppins", sans-serif;
+}
+
+.WRAPPER {
+	display: flex;
+	width: 100%;
+	height: 100vh;
+}
+
+/*--------------------------------------------------------------
+  # SideBar
+  --------------------------------------------------------------*/
+
+.SIDEBAR {
+	position: fixed;
+	z-index: 1010;
+}
+
+.SIDEBAR .bg_shadow {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: var(--black);
+	opacity: 1;
+	transition: all 0.3s ease;
+	visibility: hidden;
+	z-index: 899;
+}
+
+/*--------------------------------------------------------------
+  # Sidebar_inner
+  --------------------------------------------------------------*/
+
+.sidebar_inner {
+	position: absolute;
+	left: 0;
+	z-index: 900;
+	height: auto;
+	transition: all 0.3s ease;
+	min-height: 100vh;
+	width: 16rem !important;
+	background: var(--bg) !important;
+	box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2);
+}
+
+.sidebar_inner .sidebar_menu {
+	height: auto;
+}
+
+.sidebar_inner .sidebar_menu {
+	margin-bottom: 0 !important;
+	margin-top: 20px !important;
+}
+
+.sidebar_inner .sidebar_menu>li {
+	list-style: none;
+	margin-top: 10px;
+}
+
+.sidebar_inner .sidebar_menu>li>a {
+	padding: 8px 20px;
+	color: var(--black);
+	display: flex;
+	align-items: center;
+	position: relative;
+	margin-bottom: 1px;
+	font-size: 15px;
+	margin-left: -20px;
+	letter-spacing: 1px;
+	border-top-left-radius: 35px;
+	border-bottom-left-radius: 35px;
+}
+
+.sidebar_inner .sidebar_menu>li>a:hover, .sidebar_inner .sidebar_menu>li.active>a {
+	background: var(--green) !important;
+	color: var(--white) !important;
+}
+
+.sidebar_inner .sidebar_menu>li>a .icon {
+	margin-right: 15px;
+	font-size: 20px;
+}
+
+.sidebar_inner .closse {
+	font-size: 20px;
+	cursor: pointer;
+	color: var(--white);
+	background: var(--green);
+	border-radius: 50%;
+	border: 2px solid var(--white);
+	display: none;
+	margin-top: 15px;
+	margin-right: 15px;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+
+.sidebar_inner .closse:hover {
+	transform: scale(1.1);
+}
+
+.sidebar_inner .sidebar_logo {
+	margin: auto;
+	width: 100%;
+	padding-left: 25px;
+	padding-right: 25px;
+	margin-top: 20px;
+}
+
+.sidebar_inner .sidebar_logo img {
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+  # Fin Sidebar_inner
+  --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+  # Fin SideBar
+  --------------------------------------------------------------*/
+
+.CONTENT {
+	margin-left: 254px;
+	width: calc(100% - 224px);
+	transition: all 0.3s ease;
+}
+
+.hamburger {
+	font-size: 25px;
+	cursor: pointer;
+	color: var(--green);
+	margin-right: 20px;
+	display: none;
+}
+
+/*--------------------------------------------------------------
+  # Configuration responsive
+  --------------------------------------------------------------*/
+
+@media (max-width: 1024px) {
+	.sidebar_inner {
+		left: -300px;
+		transition: all 0.3s ease;
+	}
+	.CONTENT {
+		width: 100%;
+		margin-left: 0;
+	}
+	.navbar_content {
+		width: 100% !important;
+	}
+	.navbar_content .bloc_right .btn_deconnection .fa-power-off {
+		margin-right: 0px !important;
+	}
+	.sidebar_inner .closse, .hamburger {
+		display: block;
+	}
+	.WRAPPER.active .sidebar_inner {
+		left: 0;
+	}
+	.WRAPPER.active .bg_shadow {
+		visibility: visible;
+		opacity: 0.5;
+	}
+}
+
+/*--------------------------------------------------------------
+  # Fin Configuration responsive
+  --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+  # Content
+  --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+  # NavBar_content
+  --------------------------------------------------------------*/
+
+.navbar_content {
+	background: var(--bg) !important;
+	width: calc(100% - 224px);
+	height: 60px;
+	padding: 0 20px;
+	display: flex;
+	justify-content: space-between;
+	;
+	position: fixed;
+	z-index: 1000;
+	box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2);
+}
+
+.navbar_content .bloc_left {
+	display: flex;
+	align-items: center;
+}
+
+.navbar_content .bloc_right {
+	display: flex;
+	align-items: center;
+}
+
+.navbar_content .bloc_right .btn_deconnection .fa-power-off {
+	background: red;
+	padding: 10px;
+	color: var(--white);
+	border-radius: 50%;
+	font-size: 14px;
+	margin-top: -20px;
+	transition: 0.5s;
+	margin-right: 30px;
+}
+
+.navbar_content .bloc_right .btn_deconnection .fa-power-off:hover {
+	transform: scale(1.1);
+}
+
+.navbar_content .image_patient img {
+	border-radius: 4px;
+	border: 2px solid var(--green);
+}
+
+.navbar_content .image_patient a {
+	color: var(--marron) !important;
+	font-weight: 600;
+	font-size: 20px !important;
+	margin-left: 5px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+/*--------------------------------------------------------------
+  # Fin NavBar_content
+  --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+  # Profile
+  --------------------------------------------------------------*/
+
+#profile-blocs {
+	background-color: var(--bg);
+	width: 100%;
+	height: 91vh;
+	animation-name: slideProfile;
+	animation-duration: 0.7s;
+	padding: 15px;
+	margin-top: 60px;
+}
+
+#profile-blocs .profile {
+	width: 100%;
+	padding: 10px;
+	height: 86vh;
+	background: var(--bg);
+	box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2);
+}
+
+#profile-blocs .profile .logo_pharmacie {
+	width: 200px;
+	height: 200px;
+}
+
+#profile-blocs .profile .logo_pharmacie img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2);
+}
+
+#profile-blocs .profile .description_pharmacie {
+	margin-top: 20px;
+}
+
+#profile-blocs .profile .description_pharmacie span {
+	color: var(--green);
+	font-weight: 600;
+	font-size: 16px;
+}
+
+#profile-blocs .profile .description_pharmacie h6 {
+	font-size: 15px;
+	letter-spacing: 1px;
+	margin-top: 10px;
+	color: rgb(56, 56, 56);
+}
+
+#profile-blocs .profile .astuces_profile h6 {
+	color: var(--white);
+	font-size: 17px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background: var(--green);
+	letter-spacing: 1px;
+}
+
+#profile-blocs .profile .astuces_profile p {
+	color: rgb(56, 56, 56);
+	font-size: 15px;
+}
+
+#profile-blocs .profile .astuces_profile .image_astuce {
+	width: 80%;
+	height: 200px;
+}
+
+#profile-blocs .profile .astuces_profile .image_astuce img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+#profile-blocs .profile .button_modification {
+	margin-top: 30px;
+}
+
+#profile-blocs .profile .button_modification button {
+	background-color: var(--green);
+	color: var(--white);
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 11px solid rgb(255, 255, 255) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+	transition: 0.5s;
+}
+
+#profile-blocs .profile .button_modification button:hover {
+	transform: scale(1.1);
+}
+
+@keyframes slideProfile {
+	0% {
+		transform: translateX(-1500px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+/*--------------------------------------------------------------
+  # Fin Profile
+  --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+  # Gerer Produit
+  --------------------------------------------------------------*/
+
+#gererProduit-blocs {
+	background-color: var(--bg);
+	display: none;
+	width: 100%;
+	height: 91vh;
+	animation-name: slideGererProduit;
+	animation-duration: 0.7s;
+	padding: 15px;
+	margin-top: 60px;
+}
+
+#gererProduit-blocs .gerer_produit {
+	width: 100%;
+	padding: 10px;
+	height: 86vh;
+	background: var(--bg);
+	box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2);
+}
+
+#gererProduit-blocs .gerer_produit .header_produit {
+	display: flex;
+	justify-content: space-between;
+}
+
+#gererProduit-blocs .gerer_produit .header_produit .recherche_produit {
+	width: 400px;
+}
+
+#gererProduit-blocs .gerer_produit .header_produit .recherche_produit input {
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	border: none !important;
+	padding-left: 10px;
+	background-color: var(--bg);
+}
+
+#gererProduit-blocs .gerer_produit .header_produit .ajoute_produit button {
+	background-color: var(--green)!important;
+	color: var(--white);
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 11px solid rgb(255, 255, 255) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+	outline: none!important;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	transition: 0.5s;
+	box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2);
+}
+
+#gererProduit-blocs .gerer_produit .header_produit .ajoute_produit button:hover {
+	transform: scale(1.1);
+}
+
+#gererProduit-blocs .gerer_produit .body_produit {
+	margin-top: 20px;
+	height: 74vh;
+}
+
+#gererProduit-blocs .gerer_produit .body_produit .table-responsive .table .bg-thead {
+	background-color: var(--green);
+	color: var(--white);
+}
+
+#gererProduit-blocs .gerer_produit .body_produit .table-responsive .table .bg-thead th {
+	text-align: center!important;
+	font-weight: 600;
+}
+
+#gererProduit-blocs .gerer_produit .body_produit .table-responsive .table tbody td {
+	font-size: 15px;
+}
+
+#gererProduit-blocs .gerer_produit .body_produit .table-responsive .table tbody .btn_details {
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 2px solid rgb(200, 187, 187) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+	background-color: var(--marron);
+	color: var(--white);
+	transition: 0.5s;
+	outline: none!important;
+}
+
+#gererProduit-blocs .gerer_produit .body_produit .table-responsive .table tbody .btn_details:hover {
+	transform: scale(1.1);
+}
+
+#gererProduit-blocs .gerer_produit .body_produit .table-responsive .table tbody .btn_modifier {
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 2px solid rgb(200, 187, 187) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+	background-color: var(--green);
+	color: var(--white);
+	transition: 0.5s;
+	outline: none!important;
+}
+
+#gererProduit-blocs .gerer_produit .body_produit .table-responsive .table tbody .toggle-on.btn {
+	background-color: var(--green);
+	padding-right: 5px!important;
+	padding-left: 5px!important;
+	padding-top: 3px!important;
+	padding-bottom: 3px!important;
+}
+
+#gererProduit-blocs .gerer_produit .body_produit .table-responsive .table tbody .toggle-off.btn {
+	background-color: rgb(139, 139, 139);
+	padding-right: 5px!important;
+	padding-left: 5px!important;
+	padding-top: 3px!important;
+	padding-bottom: 3px!important;
+}
+
+#gererProduit-blocs .gerer_produit .body_produit .table-responsive .table tbody .toggle.btn {
+	min-width: 100px!important;
+	min-height: 35px !important;
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 2px solid rgb(200, 187, 187) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+	font-size: 15px;
+	transition: 0.5s;
+}
+
+#gererProduit-blocs .gerer_produit .body_produit .table-responsive .table tbody .toggle.btn:hover {
+	transform: scale(1.1);
+}
+
+#gererProduit-blocs .gerer_produit .body_produit .table-responsive .table tbody .btn_modifier:hover {
+	transform: scale(1.1);
+}
+
+#gererProduit-blocs .gerer_produit .body_produit .table-responsive .table tbody .btn_suprimer {
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 2px solid rgb(200, 187, 187) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+	background-color: red;
+	color: var(--white);
+	transition: 0.5s;
+	outline: none!important;
+}
+
+#gererProduit-blocs .gerer_produit .body_produit .table-responsive .table tbody .btn_suprimer:hover {
+	transform: scale(1.1);
+}
+
+#gererProduit-blocs #ajoute_medicament .modal-content {
+	border: none!important;
+	border-radius: 13px;
+	background-color: var(--bg);
+}
+
+#gererProduit-blocs #ajoute_medicament .modal-content .modal-header {
+	background-color: var(--green);
+	padding: 10px!important;
+}
+
+#gererProduit-blocs #ajoute_medicament .modal-content .modal-header h5 {
+	font-size: 15px;
+	font-weight: 600;
+	color: var(--white);
+	text-transform: uppercase;
+}
+
+#gererProduit-blocs #ajoute_medicament .modal-content .modal-header .close {
+	opacity: 1!important;
+	color: var(--white)!important;
+}
+
+#gererProduit-blocs #ajoute_medicament .modal-content .modal-body label {
+	font-weight: 600;
+	color: #464646;
+}
+
+#gererProduit-blocs #ajoute_medicament .modal-content .modal-body input {
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	border: none !important;
+	padding-left: 10px;
+}
+
+#gererProduit-blocs #ajoute_medicament .modal-content .modal-body textarea {
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	border: none !important;
+	padding-left: 10px;
+}
+
+#gererProduit-blocs #ajoute_medicament .modal-content .modal-footer {
+	padding: 10px!important;
+}
+
+#gererProduit-blocs #ajoute_medicament .modal-content .modal-footer button {
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: var(--green);
+	box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2);
+	transition: 0.5s;
+	color: var(--white);
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 11px solid rgb(255, 255, 255) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+	outline: none!important;
+}
+
+#gererProduit-blocs #ajoute_medicament .modal-content .modal-footer button:hover {
+	transform: scale(1.1);
+}
+
+#gererProduit-blocs #detailsMedicament .modal-content {
+	border: none!important;
+	border-radius: 13px;
+}
+
+#gererProduit-blocs #detailsMedicament .modal-content .modal-header {
+	padding: 10px!important;
+	background-color: var(--green);
+}
+
+#gererProduit-blocs #detailsMedicament .modal-content .modal-header h5 {
+	color: var(--white);
+	font-size: 15px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+#gererProduit-blocs #detailsMedicament .modal-content .modal-header .close {
+	opacity: 1!important;
+	color: var(--white);
+}
+
+#gererProduit-blocs #detailsMedicament .modal-content .modal-body .image_medicament {
+	width: 100%;
+	height: 200px;
+}
+
+#gererProduit-blocs #detailsMedicament .modal-content .modal-body .image_medicament img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+#gererProduit-blocs #detailsMedicament .modal-content .modal-body .medicament_description .medicament_nom h6 {
+	color: var(--white);
+	font-size: 17px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background: var(--green);
+	letter-spacing: 1px
+}
+
+#gererProduit-blocs #detailsMedicament .modal-content .modal-body .medicament_description .medicament_article p {
+	font-size: 15px;
+	color: #555555;
+}
+
+#gererProduit-blocs #detailsMedicament .modal-content .modal-body .medicament_description .medicament_quantite h6 {
+	font-size: 15px;
+}
+
+#gererProduit-blocs #detailsMedicament .modal-content .modal-body .medicament_description .medicament_prix h6 {
+	color: var(--white);
+	font-size: 15px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background: var(--marron);
+	letter-spacing: 1px
+}
+
+#gererProduit-blocs #modifierMedicament .modal-content {
+	border: none!important;
+	border-radius: 13px;
+	background-color: var(--bg);
+}
+
+#gererProduit-blocs #modifierMedicament .modal-content .modal-header {
+	background-color: var(--green);
+	padding: 10px!important;
+}
+
+#gererProduit-blocs #modifierMedicament .modal-content .modal-header h5 {
+	font-size: 15px;
+	font-weight: 600;
+	color: var(--white);
+	text-transform: uppercase;
+}
+
+#gererProduit-blocs #modifierMedicament .modal-content .modal-header .close {
+	opacity: 1!important;
+	color: var(--white)!important;
+}
+
+#gererProduit-blocs #modifierMedicament .modal-content .modal-body label {
+	font-weight: 600;
+	color: #464646;
+}
+
+#gererProduit-blocs #modifierMedicament .modal-content .modal-body input {
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	border: none !important;
+	padding-left: 10px;
+}
+
+#gererProduit-blocs #modifierMedicament .modal-content .modal-body textarea {
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	border: none !important;
+	padding-left: 10px;
+}
+
+#gererProduit-blocs #modifierMedicament .modal-content .modal-footer {
+	padding: 10px!important;
+}
+
+#gererProduit-blocs #modifierMedicament .modal-content .modal-footer button {
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: var(--green);
+	box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2);
+	transition: 0.5s;
+	color: var(--white);
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 11px solid rgb(255, 255, 255) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+}
+
+#gererProduit-blocs #modifierMedicament .modal-content .modal-footer button:hover {
+	transform: scale(1.1);
+}
+
+@keyframes slideGererProduit {
+	0% {
+		transform: translateX(-1500px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+/*--------------------------------------------------------------
+  # Fin gerer Produit
+  --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+  # Status vente 
+  --------------------------------------------------------------*/
+
+#statusVente-blocs {
+	background-color: var(--bg);
+	display: none;
+	width: 100%;
+	height: 91vh;
+	animation-name: slideStatusVente;
+	animation-duration: 0.7s;
+	padding: 15px;
+	margin-top: 60px;
+}
+
+#statusVente-blocs .statusVente {
+	width: 100%;
+	padding: 10px;
+	height: 86vh;
+	background: var(--bg);
+	box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2);
+}
+
+#statusVente-blocs .statusVente .select_status {
+	display: flex;
+}
+
+#statusVente-blocs .statusVente .select_status select {
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	font-weight: 600;
+	color: var(--black);
+	background-color: var(--bg);
+	border: none!important;
+}
+
+#statusVente-blocs .statusVente .content_status {
+	height: 68vh;
+}
+
+#statusVente-blocs .statusVente .content_status .table-responsive .table th {
+	background-color: var(--green);
+	color: var(--white);
+	text-align: center!important;
+	font-weight: 600;
+}
+
+#statusVente-blocs .statusVente .content_status .table-responsive .table td {
+	font-size: 15px;
+}
+
+#statusVente-blocs .statusVente .content_status .table-responsive .table td button {
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 3px solid rgb(200, 187, 187) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	color: var(--white);
+	background-color: var(--green);
+}
+#statusVente-blocs #selectVenteMois{
+	display: none;
+}
+
+#statusVente-blocs .statusVente .button_export {
+	margin-top: 20px;
+}
+
+#statusVente-blocs .statusVente .button_export button {
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 11px solid rgb(255, 255, 255) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	background-color: var(--green);
+	color: var(--white);
+}
+
+@keyframes slideStatusVente {
+	0% {
+		transform: translateX(-1500px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+/*--------------------------------------------------------------
+  # Fin Status vente
+  --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+  # Achats
+  --------------------------------------------------------------*/
+
+#achats-blocs {
+	background-color: var(--bg);
+	width: 100%;
+	height: 91vh;
+	display: none;
+	animation-name: slideAchats;
+	animation-duration: 0.7s;
+	padding: 15px;
+	margin-top: 60px;
+}
+
+#achats-blocs .achats {
+	width: 100%;
+	padding: 10px;
+	height: 86vh;
+	background: var(--bg);
+	box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2);
+}
+
+#achats-blocs .achats .content_achats .table-responsive .table .bg-thead th {
+	background-color: var(--green)!important;
+	font-weight: 600;
+	font-size: 15px!important;
+	color: var(--white);
+	text-align: center!important;
+}
+
+#achats-blocs .achats .content_achats .table-responsive .table .bg-thead2 th {
+	background-color: var(--marron)!important;
+	font-weight: 600;
+	font-size: 15px!important;
+	color: var(--white);
+	text-align: center!important;
+}
+
+#achats-blocs .achats .content_achats .table-responsive .table .bg-thead3 th {
+	background-color: var(--black)!important;
+	font-weight: 600;
+	font-size: 15px!important;
+	color: var(--white);
+	text-align: center!important;
+}
+
+#achats-blocs .achats .content_achats .table-responsive .table td {
+	font-size: 15px;
+}
+
+#achats-blocs .achats .content_achats .table-responsive .table td .btn_ordonnance {
+	background-color: var(--marron);
+	color: var(--white);
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 3px solid rgb(200, 187, 187) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+	transition: 0.5s;
+}
+
+#achats-blocs .achats .content_achats .table-responsive .table td .btn_ordonnance:hover {
+	transform: scale(1.1);
+}
+
+#achats-blocs .achats .content_achats .table-responsive .table td .btn_validation {
+	background-color: var(--green);
+	color: var(--white);
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 3px solid rgb(200, 187, 187) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+	transition: 0.5s;
+}
+
+#achats-blocs .achats .content_achats .table-responsive .table td .btn_validation:hover {
+	transform: scale(1.1);
+}
+
+#achats-blocs .achats .content_achats .table-responsive .table td #Recue {
+	background-color: var(--green);
+	font-size: 15px;
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 3px solid rgb(200, 187, 187) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+	color: var(--white);
+	transition: 0.5s;
+}
+#achats-blocs .achats .content_achats .table-responsive .table td #Recue:hover{
+	transform: scale(1.1);
+}
+
+#achats-blocs .achats .content_achats .table-responsive .table td #Recue:focus {
+	box-shadow: none!important;
+}
+
+#achats-blocs #modal_achats .modal-content {
+	border: none!important;
+	border-radius: 13px;
+	background-color: var(--bg);
+}
+
+#achats-blocs #modal_achats .modal-content .modal-header {
+	padding: 10px!important;
+	background-color: var(--green);
+}
+
+#achats-blocs #modal_achats .modal-content .modal-header h5 {
+	text-transform: uppercase;
+	font-weight: 600;
+	color: var(--white);
+	font-size: 15px;
+}
+
+#achats-blocs #modal_achats .modal-content .modal-header .close {
+	opacity: 1!important;
+	color: var(--white);
+}
+
+#achats-blocs #modal_achats .modal-content .modal-body label {
+	font-weight: 600;
+	font-size: 15px;
+	color: var(--black);
+}
+
+#achats-blocs #modal_achats .modal-content .modal-body input {
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	border: none !important;
+	padding-left: 10px;
+	background-color: var(--bg);
+}
+
+#achats-blocs #modal_achats .modal-content .modal-body #form_frais {
+	display: none;
+}
+
+#achats-blocs #modal_achats .modal-content .modal-body #nom_valider {
+	display: none;
+}
+
+#achats-blocs #modal_achats .modal-content .modal-body select {
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	border: none !important;
+	padding-left: 10px;
+	font-weight: 600;
+	background-color: var(--bg);
+}
+
+#achats-blocs #modal_achats .modal-content .modal-body textarea {
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	border: none !important;
+	padding-left: 10px;
+	background-color: var(--bg);
+}
+
+#achats-blocs #modal_achats .modal-content .modal-body select option {
+	font-weight: 600;
+	color: var(--black);
+	background-color: var(--bg);
+}
+
+#achats-blocs #modal_achats .modal-content .modal-footer {
+	padding: 10px!important;
+}
+
+#achats-blocs #modal_achats .modal-content .modal-footer button {
+	background-color: var(--green);
+	color: var(--white);
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	transition: 0.5s;
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 11px solid rgb(255, 255, 255) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+}
+
+#achats-blocs #modal_achats .modal-content .modal-footer button:hover {
+	transform: scale(1.1);
+}
+
+#achats-blocs #modal_reference .modal-content {
+	border: none!important;
+	border-radius: 13px;
+	background-color: var(--bg);
+}
+
+#achats-blocs #modal_reference .modal-content .modal-header {
+	padding: 10px!important;
+	background-color: var(--black);
+}
+
+#achats-blocs #modal_reference .modal-content .modal-header h5 {
+	text-transform: uppercase;
+	font-weight: 600;
+	color: var(--white);
+	font-size: 15px;
+}
+
+#achats-blocs #modal_reference .modal-content .modal-header .close {
+	opacity: 1!important;
+	color: var(--white);
+}
+
+#achats-blocs #modal_reference .modal-content .modal-body label {
+	font-weight: 600;
+	font-size: 15px;
+	color: var(--black);
+}
+
+#achats-blocs #modal_reference .modal-content .modal-body input {
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	border: none !important;
+	padding-left: 10px;
+	background-color: var(--bg);
+}
+
+#achats-blocs #modal_reference .modal-content .modal-body #form_validerReference {
+	display: none;
+}
+
+#achats-blocs #modal_reference .modal-content .modal-body #nom_validerReference {
+	display: none;
+}
+
+#achats-blocs #modal_reference .modal-content .modal-body select {
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	border: none !important;
+	padding-left: 10px;
+	font-weight: 600;
+	background-color: var(--bg);
+}
+
+#achats-blocs #modal_reference .modal-content .modal-body textarea {
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	border: none !important;
+	padding-left: 10px;
+	background-color: var(--bg);
+}
+
+#achats-blocs #modal_reference .modal-content .modal-body select option {
+	font-weight: 600;
+	color: var(--black);
+	background-color: var(--bg);
+}
+
+#achats-blocs #modal_reference .modal-content .modal-footer {
+	padding: 10px!important;
+}
+
+#achats-blocs #modal_reference .modal-content .modal-footer button {
+	background-color: var(--black);
+	color: var(--white);
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	transition: 0.5s;
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 11px solid rgb(255, 255, 255) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+}
+
+#achats-blocs #modal_reference .modal-content .modal-footer button:hover {
+	transform: scale(1.1);
+}
+
+@keyframes slideAchats {
+	0% {
+		transform: translateX(-1500px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+/*--------------------------------------------------------------
+  # Fin Achats
+  --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+  # Patients
+  --------------------------------------------------------------*/
+
+#listesPatients-blocs {
+	background-color: var(--bg);
+	width: 100%;
+	height: 91vh;
+	display: none;
+	animation-name: slidePatient;
+	animation-duration: 0.7s;
+	padding: 15px;
+	margin-top: 60px;
+}
+
+#listesPatients-blocs .listesPatients {
+	width: 100%;
+	padding: 10px;
+	height: 86vh;
+	background: var(--bg);
+	box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2);
+}
+
+#listesPatients-blocs .listesPatients .recherche_patients input {
+	width: 400px;
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	border: none !important;
+	padding-left: 10px;
+	margin-top: 10px;
+	border: none!important;
+	background-color: var(--bg);
+}
+
+#listesPatients-blocs .listesPatients .content_listesPatients {
+	margin-top: 10px;
+}
+
+#listesPatients-blocs .listesPatients .content_listesPatients .table-responsive .table .bg-thead {
+	background-color: var(--green);
+}
+
+#listesPatients-blocs .listesPatients .content_listesPatients .table-responsive .table .bg-thead th {
+	text-align: center!important;
+	color: var(--white);
+	font-weight: 600;
+	font-size: 15px;
+}
+
+#listesPatients-blocs .listesPatients .content_listesPatients .table-responsive .table tbody td {
+	font-size: 15px;
+	text-align: center!important;
+}
+
+#listesPatients-blocs .listesPatients .content_listesPatients .table-responsive .table tbody td .btn-success {
+	background-color: var(--green);
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 3px solid rgb(200, 187, 187) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+	color: var(--white);
+}
+
+#listesPatients-blocs .listesPatients .content_listesPatients .table-responsive .table tbody td .btn-danger {
+	background-color: red;
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 3px solid rgb(200, 187, 187) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+	color: var(--white);
+}
+
+#listesPatients-blocs .listesPatients .content_listesPatients .table-responsive .table tbody td .btn-avertissement {
+	background-color: red;
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 3px solid rgb(200, 187, 187)!important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+}
+
+#listesPatients-blocs .listesPatients .content_listesPatients .table-responsive .table tbody td .btn-avertissement .badge {
+	color: var(--black);
+}
+
+#listesPatients-blocs .modal-detailsPatients .modal-content {
+	border: none!important;
+	border-radius: 13px;
+	background-color: var(--bg);
+}
+
+#listesPatients-blocs .modal-detailsPatients .modal-content .modal-header {
+	background-color: var(--green);
+	color: var(--white);
+	padding: 10px!important;
+}
+
+#listesPatients-blocs .modal-detailsPatients .modal-content .modal-header h5 {
+	text-transform: uppercase;
+	font-size: 15px!important;
+	font-weight: 600;
+}
+
+#listesPatients-blocs .modal-detailsPatients .modal-content .modal-header .close {
+	opacity: 1!important;
+	color: var(--white);
+}
+
+#listesPatients-blocs .modal-detailsPatients .modal-content .modal-body {
+	padding: 20px;
+	background: var(--bg);
+}
+
+
+#listesPatients-blocs .modal-detailsPatients .modal-content .modal-body .image-patients {
+	width: 100%;
+	height: 280px;
+}
+
+#listesPatients-blocs .modal-detailsPatients .modal-content .modal-body .image-patients img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2);
+}
+
+#listesPatients-blocs .modal-detailsPatients .modal-content .modal-body .descriptionsPatients h6 {
+	font-size: 15px;
+	color: rgb(97, 97, 97);
+	margin-bottom: 15px;
+	letter-spacing: 1px;
+}
+
+#listesPatients-blocs .modal-detailsPatients .modal-content .modal-body h6 {
+	font-size: 15px;
+	color: rgb(97, 97, 97);
+	margin-bottom: 15px;
+	letter-spacing: 1px;
+}
+
+#listesPatients-blocs .modal-detailsPatients .modal-content .modal-body h6 span {
+	font-weight: 600;
+	color: var(--green);
+}
+
+
+
+
+#listesPatients-blocs .modal-notifierPatients .modal-content {
+	border: none!important;
+	border-radius: 13px;
+	background-color: var(--bg);
+}
+
+#listesPatients-blocs .modal-notifierPatients .modal-content .modal-header {
+	background-color: var(--green);
+	color: var(--white);
+	text-transform: uppercase;
+	padding: 10px!important;
+}
+
+#listesPatients-blocs .modal-notifierPatients .modal-content .modal-header h5 {
+	font-size: 15px!important;
+	font-weight: 600;
+}
+
+#listesPatients-blocs .modal-notifierPatients .modal-content .modal-header .close {
+	opacity: 1;
+	color: var(--white);
+}
+
+#listesPatients-blocs .modal-notifierPatients .modal-content .modal-body {
+	padding: 20px;
+}
+
+#listesPatients-blocs .modal-notifierPatients .modal-content .modal-body select {
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	font-weight: 600;
+	color: var(--black);
+	background-color: var(--bg);
+	border: none!important;
+}
+
+#listesPatients-blocs .modal-notifierPatients .modal-content .modal-body textarea {
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	background-color: var(--bg);
+	border: none!important;
+}
+
+#listesPatients-blocs .modal-notifierPatients .modal-content .modal-footer {
+	padding: 10px!important;
+}
+
+#listesPatients-blocs .modal-notifierPatients .modal-content .modal-footer button {
+	background-color: var(--green);
+	color: var(--white);
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 11px solid rgb(255, 255, 255) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+	font-size: 15px;
+	transition: 0.5s;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#listesPatients-blocs .modal-notifierPatients .modal-content .modal-footer button:hover {
+	transform: scale(1.1);
+}
+
+@keyframes slidePatient {
+	0% {
+		transform: translateX(-1500px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+/*--------------------------------------------------------------
+  # Fin Patient
+  --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+  # Payements
+  --------------------------------------------------------------*/
+
+#payements-blocs {
+	background-color: var(--bg);
+	width: 100%;
+	height: 91vh;
+	display: none;
+	animation-name: slidePayements;
+	animation-duration: 0.7s;
+	padding: 15px;
+	margin-top: 60px;
+}
+
+#payements-blocs .payements {
+	width: 100%;
+	padding: 10px;
+	height: 86vh;
+	background: var(--bg);
+	box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2);
+}
+
+#payements-blocs .payements .nav-pills {
+	box-shadow: none!important;
+}
+
+#payements-blocs .payements .nav-pills .nav-link {
+	width: 300px!important;
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 11px solid rgb(255, 255, 255) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+	color: var(--white);
+	margin-left: 115px;
+	background-color: var(--green);
+}
+
+#payements-blocs .payements .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+	color: #fff;
+	background-color: gray;
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie .btn_ajoute_payement {
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 11px solid rgb(255, 255, 255) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+	color: var(--white);
+	background-color: var(--green);
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie .btn_ajoute_payement:focus {
+	box-shadow: none!important;
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie .table-responsive {
+	margin-top: 10px;
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie .table-responsive .table th {
+	background-color: var(--green);
+	color: var(--white);
+	font-weight: 600;
+	text-align: center!important;
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie .table-responsive .table td {
+	font-size: 15px;
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie .table-responsive .table td button {
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 3px solid rgb(200, 187, 187) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie .table-responsive .table td .btn-success {
+	background-color: var(--green);
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie .table-responsive .table td .btn-danger {
+	background-color: red!important;
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie .table-responsive .table td button:focus {
+	box-shadow: none!important;
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie #ajoutePayement .modal-content {
+	border: none!important;
+	border-radius: 13px!important;
+	background-color: var(--bg);
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie #ajoutePayement .modal-content .modal-header {
+	background-color: var(--green);
+	padding: 10px!important;
+	color: var(--white);
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie #ajoutePayement .modal-content .modal-header h5 {
+	font-size: 15px;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie #ajoutePayement .modal-content .modal-header .close {
+	opacity: 1!important;
+	color: var(--white);
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie #ajoutePayement .modal-content .modal-body label {
+	font-weight: 600;
+	font-size: 15px;
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie #ajoutePayement .modal-content .modal-body select {
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	font-weight: 600;
+	color: var(--black);
+	background-color: var(--bg);
+	border: none!important;
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie #ajoutePayement .modal-content .modal-body input {
+	background-color: var(--bg);
+	border: none!important;
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie #ajoutePayement .modal-content .modal-footer {
+	padding: 10px!important;
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie #ajoutePayement .modal-content .modal-footer button {
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 11px solid rgb(255, 255, 255) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+	background-color: var(--green);
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	transition: 0.5s;
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie #ajoutePayement .modal-content .modal-footer button:hover {
+	transform: scale(1.1);
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie #modifierPayement .modal-content {
+	border: none!important;
+	border-radius: 13px!important;
+	background-color: var(--bg);
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie #modifierPayement .modal-content .modal-header {
+	background-color: var(--green);
+	padding: 10px!important;
+	color: var(--white);
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie #modifierPayement .modal-content .modal-header h5 {
+	font-size: 15px;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie #modifierPayement .modal-content .modal-header .close {
+	opacity: 1!important;
+	color: var(--white);
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie #modifierPayement .modal-content .modal-body label {
+	font-weight: 600;
+	font-size: 15px;
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie #modifierPayement .modal-content .modal-body select {
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	font-weight: 600;
+	color: var(--black);
+	background-color: var(--bg);
+	border: none!important;
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie #modifierPayement .modal-content .modal-body input {
+	background-color: var(--bg);
+	border: none!important;
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie #modifierPayement .modal-content .modal-footer {
+	padding: 10px!important;
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie #modifierPayement .modal-content .modal-footer button {
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 11px solid rgb(255, 255, 255) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+	background-color: var(--green);
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	transition: 0.5s;
+}
+
+#payements-blocs .payements #pills-peyement_pharmacie #modifierPayement .modal-content .modal-footer button:hover {
+	transform: scale(1.1);
+}
+
+#payements-blocs .payements #pills-payement_loyer {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#payements-blocs .payements #pills-payement_loyer .button_loyer select {
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	font-weight: 600;
+	color: var(--black);
+	background-color: var(--bg);
+	border: none!important;
+}
+
+#payements-blocs .payements #pills-payement_loyer .button_loyer .button_ajoute_loyer button {
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 11px solid rgb(255, 255, 255) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+	color: var(--white);
+	background-color: var(--green);
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#payements-blocs .payements #pills-payement_loyer .table-responsive .table th {
+	font-size: 15px;
+	font-weight: 600;
+	background-color: var(--green);
+	text-align: center!important;
+	color: var(--white);
+}
+
+#payements-blocs .payements #pills-payement_loyer .table-responsive .table td {
+	font-size: 15px;
+}
+
+#payements-blocs .payements #pills-payement_loyer .table-responsive .table td button {
+	background-color: var(--green);
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: var(--white);
+	border-radius: 22px;
+	border: none!important;
+}
+
+#payements-blocs .payements #pills-payement_loyer .table-responsive .table td button:focus {
+	box-shadow: none!important;
+}
+
+#payements-blocs .payements #pills-payement_loyer #ajouter_loyer .modal-content {
+	border: none!important;
+	border-radius: 13px!important;
+	background-color: var(--bg);
+}
+
+#payements-blocs .payements #pills-payement_loyer #ajouter_loyer .modal-content .modal-header {
+	background-color: var(--green);
+	padding: 10px!important;
+	color: var(--white);
+}
+
+#payements-blocs .payements #pills-payement_loyer #ajouter_loyer .modal-content .modal-header h5 {
+	font-size: 15px;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+#payements-blocs .payements #pills-payement_loyer #ajouter_loyer .modal-content .modal-header .close {
+	opacity: 1!important;
+	color: var(--white);
+}
+
+#payements-blocs .payements #pills-payement_loyer #ajouter_loyer .modal-content .modal-body label {
+	font-weight: 600;
+	font-size: 15px;
+}
+
+#payements-blocs .payements #pills-payement_loyer #ajouter_loyer .modal-content .modal-body select {
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	font-weight: 600;
+	color: var(--black);
+	background-color: var(--bg);
+	border: none!important;
+}
+
+#payements-blocs .payements #pills-payement_loyer #ajouter_loyer .modal-content .modal-body input {
+	background-color: var(--bg);
+	border: none!important;
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+}
+
+#payements-blocs .payements #pills-payement_loyer #ajouter_loyer .modal-content .modal-footer {
+	padding: 10px!important;
+}
+
+#payements-blocs .payements #pills-payement_loyer #ajouter_loyer .modal-content .modal-footer button {
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 11px solid rgb(255, 255, 255) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+	background-color: var(--green);
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	transition: 0.5s;
+}
+
+#payements-blocs .payements #pills-payement_loyer #ajouter_loyer .modal-content .modal-footer button:hover {
+	transform: scale(1.1);
+}
+
+@keyframes slidePayements {
+	0% {
+		transform: translateX(-1500px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+/*--------------------------------------------------------------
+  # Payements
+  --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+  # Fin Content
+  --------------------------------------------------------------*/
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {}
+
+@media (min-width: 768px) and (max-width: 991.98px) {}
+
+@media (min-width: 576px) and (max-width: 767.98px) {}
+
+@media (min-width: 376px) and (max-width: 575.98px) {}
+
+@media (min-width: 320px) and (max-width: 375.98px) {}

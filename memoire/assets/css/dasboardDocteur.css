@@ -1,0 +1,1064 @@
+:root {
+	--bg: #ebecf0;
+	--white: rgb(255, 255, 255);
+	--black: #3b3b3b;
+	--green: rgb(0, 196, 0);
+	--marron: rgb(100, 54, 1);
+  }
+  
+  a {
+	transition: all 0.3s ease 0s;
+	text-decoration: none;
+  }
+  
+  a:hover {
+	color: var(--white);
+	text-decoration: none;
+  }
+  
+  a:active, a:hover {
+	outline: 0 none;
+  }
+  
+  body, html {
+	background-color: var(--bg);
+	position: relative;
+	overflow-x: hidden;
+	font-family: "Poppins", sans-serif;
+  }
+  
+  .WRAPPER {
+	display: flex;
+	width: 100%;
+	height: 100vh;
+  }
+  
+  /*--------------------------------------------------------------
+  # SideBar
+  --------------------------------------------------------------*/
+  
+  .SIDEBAR {
+	position: fixed;
+	z-index: 1010;
+  }
+  
+  .SIDEBAR .bg_shadow {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: var(--black);
+	opacity: 1;
+	transition: all 0.3s ease;
+	visibility: hidden;
+	z-index: 899;
+  }
+  
+  /*--------------------------------------------------------------
+  # Sidebar_inner
+  --------------------------------------------------------------*/
+  
+  .sidebar_inner {
+	position: absolute;
+	left: 0;
+	z-index: 900;
+	height: auto;
+	transition: all 0.3s ease;
+	min-height: 100vh;
+	width: 16rem !important;
+	background: var(--bg) !important;
+	box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2);
+  }
+  
+  .sidebar_inner .sidebar_menu {
+	height: auto;
+  }
+  
+  .sidebar_inner .sidebar_menu {
+	margin-bottom: 0 !important;
+	margin-top: 20px !important;
+  }
+  
+  .sidebar_inner .sidebar_menu>li {
+	list-style: none;
+	margin-top: 10px;
+  }
+  
+  .sidebar_inner .sidebar_menu>li>a {
+	padding: 8px 20px;
+	color: var(--black);
+	display: flex;
+	align-items: center;
+	position: relative;
+	margin-bottom: 1px;
+	font-size: 15px;
+	margin-left: -20px;
+	letter-spacing: 1px;
+	border-top-left-radius: 35px;
+	border-bottom-left-radius: 35px;
+  }
+  
+  .sidebar_inner .sidebar_menu>li>a:hover, .sidebar_inner .sidebar_menu>li.active>a {
+	background: var(--green) !important;
+	color: var(--white) !important;
+  }
+  
+  .sidebar_inner .sidebar_menu>li>a .icon {
+	margin-right: 15px;
+	font-size: 20px;
+  }
+  
+  .sidebar_inner .closse {
+	font-size: 20px;
+	cursor: pointer;
+	color: var(--white);
+	background: var(--green);
+	border-radius: 50%;
+	border: 2px solid var(--white);
+	display: none;
+	margin-top: 15px;
+	margin-right: 15px;
+	padding-left: 6px;
+	padding-right: 6px;
+  }
+  
+  .sidebar_inner .closse:hover {
+	transform: scale(1.1);
+  }
+  
+  .sidebar_inner .sidebar_logo {
+	margin: auto;
+	width: 100%;
+	padding-left: 25px;
+	padding-right: 25px;
+	margin-top: 20px;
+  }
+  
+  .sidebar_inner .sidebar_logo img {
+	width: 100%;
+  }
+  
+  /*--------------------------------------------------------------
+  # Fin Sidebar_inner
+  --------------------------------------------------------------*/
+  
+  /*--------------------------------------------------------------
+  # Fin SideBar
+  --------------------------------------------------------------*/
+  
+  .CONTENT {
+	margin-left: 254px;
+	width: calc(100% - 224px);
+	transition: all 0.3s ease;
+  }
+  
+  .hamburger {
+	font-size: 25px;
+	cursor: pointer;
+	color: var(--green);
+	margin-right: 20px;
+	display: none;
+  }
+  
+  /*--------------------------------------------------------------
+  # Configuration responsive
+  --------------------------------------------------------------*/
+  
+  @media (max-width: 1024px) {
+	.sidebar_inner {
+	  left: -300px;
+	  transition: all 0.3s ease;
+	}
+	.CONTENT {
+	  width: 100%;
+	  margin-left: 0;
+	}
+	.navbar_content {
+	  width: 100% !important;
+	}
+	.navbar_content .bloc_right .btn_deconnection .fa-power-off {
+	  margin-right: 0px !important;
+	}
+	.sidebar_inner .closse, .hamburger {
+	  display: block;
+	}
+	.WRAPPER.active .sidebar_inner {
+	  left: 0;
+	}
+	.WRAPPER.active .bg_shadow {
+	  visibility: visible;
+	  opacity: 0.5;
+	}
+  }
+  
+  /*--------------------------------------------------------------
+  # Fin Configuration responsive
+  --------------------------------------------------------------*/
+  
+  /*--------------------------------------------------------------
+  # Content
+  --------------------------------------------------------------*/
+  
+  /*--------------------------------------------------------------
+  # NavBar_content
+  --------------------------------------------------------------*/
+  
+  .navbar_content {
+	background: var(--bg) !important;
+	width: calc(100% - 224px);
+	height: 60px;
+	padding: 0 20px;
+	display: flex;
+	justify-content: space-between;
+	position: fixed;
+	z-index: 1000;
+	box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2);
+  }
+  
+  .navbar_content .bloc_left {
+	display: flex;
+	align-items: center;
+  }
+  
+  .navbar_content .bloc_right {
+	display: flex;
+	align-items: center;
+  }
+  
+  .navbar_content .bloc_right .btn_deconnection .fa-power-off {
+	background: red;
+	padding: 10px;
+	color: var(--white);
+	border-radius: 50%;
+	font-size: 14px;
+	transition: 0.5s;
+	margin-right: 30px;
+  }
+  
+  .navbar_content .bloc_right .btn_deconnection .fa-power-off:hover {
+	transform: scale(1.1);
+  }
+  
+  .navbar_content .image_docteur img {
+	border-radius: 4px;
+  }
+  
+  .navbar_content .image_docteur a {
+	color: var(--marron) !important;
+	font-weight: 600;
+	font-size: 20px !important;
+	margin-left: 5px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+  }
+  
+  /*--------------------------------------------------------------
+  # Fin NavBar_content
+  --------------------------------------------------------------*/
+  
+  /*--------------------------------------------------------------
+  # Profile
+  --------------------------------------------------------------*/
+  
+  #profile-blocs {
+	background-color: var(--bg);
+	width: 100%;
+	height: 91vh;
+	animation-name: slideProfile;
+	animation-duration: 0.7s;
+	padding: 15px;
+	margin-top: 60px;
+  }
+  
+  #profile-blocs .profile {
+	width: 100%;
+	height: 90vh;
+	background: var(--bg);
+	padding: 10px;
+	box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2);
+  }
+  
+  #profile-blocs .profile .image_docteur {
+	width: 200px;
+  }
+  
+  #profile-blocs .profile .image_docteur img {
+	width: 100%;
+	object-fit: contain;
+	box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2);
+	border-radius: 50%;
+  }
+  
+  #profile-blocs .profile .description_docteur span {
+	color: var(--green);
+	font-weight: 600;
+	font-size: 16px;
+  }
+  
+  #profile-blocs .profile .description_docteur h6 {
+	font-size: 15px;
+	letter-spacing: 1px;
+	margin-top: 10px;
+	color: rgb(56, 56, 56);
+  }
+  
+  #profile-blocs .profile .astuces_profile h6 {
+	color: var(--white);
+	font-size: 17px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background: var(--green);
+	letter-spacing: 1px;
+  }
+  
+  #profile-blocs .profile .astuces_profile p {
+	color: rgb(56, 56, 56);
+	font-size: 15px;
+  }
+  
+  #profile-blocs .profile .astuces_profile .image_astuce {
+	width: 80%;
+	height: 200px;
+  }
+  
+  #profile-blocs .profile .astuces_profile .image_astuce img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+  }
+  
+  #profile-blocs .profile .button_modification {
+	margin-top: 30px;
+  }
+  
+  #profile-blocs .profile .button_modification button {
+	background-color: var(--green);
+	color: var(--white);
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 11px solid rgb(255, 255, 255) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+  }
+  
+  @keyframes slideProfile {
+	0% {
+	  transform: translateX(-1500px);
+	}
+	100% {
+	  transform: translateX(0);
+	}
+  }
+  
+  /*--------------------------------------------------------------
+  # Fin Profile
+  --------------------------------------------------------------*/
+  
+  /*--------------------------------------------------------------
+  # Messages
+  --------------------------------------------------------------*/
+  
+  #messages-blocs {
+	background-color: var(--bg);
+	display: none;
+	width: 100%;
+	height: 91vh;
+	animation-name: slideMessages;
+	animation-duration: 0.7s;
+	padding: 15px;
+	margin-top: 60px;
+  }
+  
+  #messages-blocs .message {
+	width: 100%;
+	height: 90vh;
+	background: var(--bg);
+	padding: 10px;
+	box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2);
+  }
+  
+  #messages-blocs .message .table-responsive .bg-thead {
+	background-color: var(--green);
+	color: var(--white);
+  }
+  
+  #messages-blocs .message .table-responsive .bg-thead th {
+	font-size: 15px;
+	text-align: center!important;
+	font-weight: 600;
+  }
+  
+  #messages-blocs .message .table-responsive tbody td {
+	font-size: 15px;
+  }
+  
+  #messages-blocs .message .table-responsive button {
+	color: var(--white);
+	background-color: var(--green);
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 3px solid rgb(200, 187, 187) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+	font-size: 15px;
+  }
+  
+  #messages-blocs .message .modal .modal-content {
+	border: none!important;
+	background: var(--bg);
+  }
+  
+  #messages-blocs .message .modal .modal-content .modal-header {
+	background-color: var(--green);
+	color: var(--white);
+	padding: 10px!important;
+  }
+  
+  #messages-blocs .message .modal .modal-content .modal-header .close {
+	opacity: 1;
+	color: var(--white);
+  }
+  
+  #messages-blocs .message .modal .modal-content .modal-body {
+	height: 350px;
+	padding: 20px;
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+  }
+  
+  #messages-blocs .message .modal .modal-content .modal-body .message_patient {
+	width: 60%;
+	margin-top: 10px;
+  }
+  
+  #messages-blocs .message .modal .modal-content .modal-body .message_patient .patients_nom {
+	display: flex;
+  }
+  
+  #messages-blocs .message .modal .modal-content .modal-body .message_patient .patients_nom img {
+	border-radius: 21px;
+  }
+  
+  #messages-blocs .message .modal .modal-content .modal-body .message_patient .patients_nom .actif {
+	color: var(--green);
+	margin-top: 22px;
+	margin-left: -7px;
+  }
+  
+  #messages-blocs .message .modal .modal-content .modal-body .message_patient .patients_nom .inactif {
+	color: grey;
+	margin-top: 22px;
+	margin-left: -7px;
+  }
+  
+  #messages-blocs .message .modal .modal-content .modal-body .message_patient .patients_nom h6 {
+	color: var(--black);
+	margin-left: 5px;
+	margin-top: 12px;
+  }
+  
+  #messages-blocs .message .modal .modal-content .modal-body .message_patient .content_message {
+	padding: 10px;
+	background-color: var(--green);
+	border-radius: 10px;
+	margin-top: 10px;
+	height: auto;
+	width: 100%;
+  }
+  
+  #messages-blocs .message .modal .modal-content .modal-body .message_patient .content_message span {
+	color: var(--white);
+  }
+  
+  #messages-blocs .message .modal .modal-content .modal-body .message_docteur {
+	width: 60%;
+	margin-top: 10px;
+  }
+  
+  #messages-blocs .message .modal .modal-content .modal-body .message_docteur .docteur_nom {
+	display: flex;
+  }
+  
+  #messages-blocs .message .modal .modal-content .modal-body .message_docteur .docteur_nom img {
+	border-radius: 21px;
+  }
+  
+  #messages-blocs .message .modal .modal-content .modal-body .message_docteur .docteur_nom .actif {
+	color: var(--green);
+	margin-top: 22px;
+	margin-left: -7px;
+  }
+  
+  #messages-blocs .message .modal .modal-content .modal-body .message_docteur .docteur_nom .inactif {
+	color: grey;
+	margin-top: 22px;
+	margin-left: -7px;
+  }
+  
+  #messages-blocs .message .modal .modal-content .modal-body .message_docteur .docteur_nom h6 {
+	color: var(--black);
+	margin-left: 5px;
+	margin-top: 12px;
+  }
+  
+  #messages-blocs .message .modal .modal-content .modal-body .message_docteur .content_message {
+	padding: 10px;
+	background-color: grey;
+	border-radius: 10px;
+	margin-top: 10px;
+	height: auto;
+	width: 100%;
+  }
+
+
+  #messages-blocs .message .modal .modal-content .modal-body .message_docteur .content_message span {
+	color: var(--white);
+  }
+  
+  #messages-blocs .message .modal .modal-content .modal-body .message_docteur .content_ordonance {
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	background-color: grey;
+	border: 2px solid var(--white);
+	display: flex;
+	margin-top: 10px;
+  }
+  
+  #messages-blocs .message .modal .modal-content .modal-body .message_docteur .content_ordonance h6 {
+	margin-right: 10px;
+	font-size: 15px;
+	color: var(--white);
+  }
+  
+  #messages-blocs .message .modal .modal-content .modal-body .message_docteur .content_ordonance i {
+	color: var(--white);
+	font-size: 18px;
+  }
+  
+  #messages-blocs .message .modal .modal-content .formulaire_reponse {
+	padding: 20px;
+  }
+  
+  #messages-blocs .message .modal .modal-content .formulaire_reponse label {
+	color: var(--black);
+	font-weight: 600;
+  }
+  
+  #messages-blocs .message .modal .modal-content .formulaire_reponse input {
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	border: none !important;
+	padding-left: 10px;
+	background-color: var(--bg);
+  }
+  
+  #messages-blocs .message .modal .modal-content .formulaire_reponse .input_message {
+	display: flex;
+  }
+  
+  #messages-blocs .message .modal .modal-content .formulaire_reponse .input_message textarea {
+	height: 65px;
+	width: 700px;
+	margin-right: 10px;
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	border: none !important;
+	padding-left: 10px;
+	background-color: var(--bg);
+  }
+  
+  #messages-blocs .message .modal .modal-content .formulaire_reponse .input_message button {
+	height: 65px;
+	width: 65px;
+	background-color: var(--green);
+	color: var(--white);
+	border: none!important;
+	transition: 0.5s;
+  }
+  
+  #messages-blocs .message .modal .modal-content .formulaire_reponse .input_message button:hover {
+	transform: scale(1.1);
+  }
+  
+  #messages-blocs .message .modal .modal-content .formulaire_reponse .input_message button i {
+	font-size: 26px;
+  }
+  
+  @keyframes slideMessages {
+	0% {
+	  transform: translateX(-1500px);
+	}
+	100% {
+	  transform: translateX(0);
+	}
+  }
+  
+  /*--------------------------------------------------------------
+  # Fin Messages
+  --------------------------------------------------------------*/
+  
+  /*--------------------------------------------------------------
+  # Forums
+  --------------------------------------------------------------*/
+  
+  #forums-blocs {
+	background-color: var(--bg);
+	display: none;
+	width: 100%;
+	height: 91vh;
+	animation-name: slideForums;
+	animation-duration: 0.7s;
+	padding: 15px;
+	margin-top: 60px;
+  }
+  
+  #forums-blocs .forums {
+	box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2);
+	background: var(--bg);
+	height: 90vh;
+  }
+  
+  #forums-blocs .forums .content_forum {
+	padding: 10px;
+  }
+  
+  #forums-blocs .forums .content_forum .header_forum {
+	display: flex;
+	align-items: center;
+  }
+  
+  #forums-blocs .forums .content_forum .header_forum .docteur {
+	display: flex;
+	align-items: center;
+  }
+  
+  #forums-blocs .forums .content_forum .header_forum .docteur img {
+	border-radius: 50%;
+  }
+  
+  #forums-blocs .forums .content_forum .header_forum .docteur h6 {
+	font-size: 15px;
+	font-weight: 600;
+	margin-top: 10px!important;
+	margin-left: 10px;
+  }
+  
+  #forums-blocs .forums .content_forum .header_forum .docteur .actif {
+	margin-left: -7px;
+	color: var(--green);
+	margin-top: 20px;
+  }
+  
+  #forums-blocs .forums .content_forum .body_forum {
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	margin-top: 10px;
+	width: 100%;
+	height: 440px;
+	padding: 10px;
+  }
+  
+  #forums-blocs .forums .content_forum .body_forum .membre_docteur_forum {
+	width: 60%;
+	margin-top: 10px;
+  }
+  
+  #forums-blocs .forums .content_forum .body_forum .membre_docteur_forum .nom_membre_docteur_forum {
+	display: flex;
+  }
+  
+  #forums-blocs .forums .content_forum .body_forum .membre_docteur_forum .nom_membre_docteur_forum img {
+	border-radius: 50%;
+  }
+  
+  #forums-blocs .forums .content_forum .body_forum .membre_docteur_forum .nom_membre_docteur_forum .actif {
+	color: var(--green);
+	margin-top: 20px;
+	margin-left: -8px;
+  }
+  
+  #forums-blocs .forums .content_forum .body_forum .membre_docteur_forum .nom_membre_docteur_forum .inactif {
+	color: grey;
+	margin-top: 20px;
+	margin-left: -8px;
+  }
+  
+  #forums-blocs .forums .content_forum .body_forum .membre_docteur_forum .nom_membre_docteur_forum h6 {
+	margin-top: 10px;
+	margin-left: 5px;
+	font-size: 15px;
+  }
+  
+  #forums-blocs .forums .content_forum .body_forum .membre_docteur_forum .content_membre_docteur_forum {
+	padding: 10px;
+	border-radius: 10px;
+	background-color: var(--green);
+	margin-top: 10px;
+  }
+  
+  #forums-blocs .forums .content_forum .body_forum .membre_docteur_forum .content_membre_docteur_forum span {
+	color: var(--white);
+	font-size: 15px;
+  }
+  
+  #forums-blocs .forums .content_forum .body_forum .message_docteur_forum {
+	width: 60%;
+	background-color: grey;
+	padding: 10px;
+	border-radius: 10px;
+	font-size: 15px;
+	margin-top: 10px;
+	margin-right: 5px;
+  }
+  
+  #forums-blocs .forums .content_forum .body_forum .message_docteur_forum span {
+	margin-top: 10px;
+	color: var(--white);
+  }
+  
+  #forums-blocs .forums .content_forum .footer_forum {
+	display: flex;
+  }
+  
+  #forums-blocs .forums .content_forum .footer_forum input {
+	height: 50px;
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	border: none !important;
+	padding-left: 10px;
+	background-color: var(--bg);
+	padding-left: 10px;
+	margin-top: 15px;
+  }
+  
+  #forums-blocs .forums .content_forum .footer_forum button {
+	background-color: var(--green);
+	border: none;
+	margin-top: 16px;
+	margin-left: 10px;
+	transition: 0.5s;
+	padding: 10px !important;
+	height: 48px;
+  }
+  
+  #forums-blocs .forums .content_forum .footer_forum button:hover {
+	transform: scale(1.1);
+  }
+  
+  #forums-blocs .forums .content_forum .footer_forum button i {
+	font-size: 20px;
+	color: var(--white);
+  }
+  
+  #forums-blocs .forums .membre_docteur {
+	padding: 10px;
+  }
+  
+  #forums-blocs .forums .membre_docteur .titre_membre_docteur h6 {
+	background-color: var(--green);
+	font-size: 17px;
+	color: var(--white);
+	padding: 5px;
+  }
+  
+  #forums-blocs .forums .membre_docteur .listes_docteur {
+	height: 500px;
+  }
+  
+  #forums-blocs .forums .membre_docteur .listes_docteur .content_listes {
+	display: flex;
+	box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2);
+	background: var(--bg);
+	padding: 5px;
+	margin-bottom: 15px;
+	align-items: center;
+	justify-content: space-between;
+  }
+  
+  #forums-blocs .forums .membre_docteur .listes_docteur .content_listes .nom_docteur {
+	display: flex;
+  }
+  
+  #forums-blocs .forums .membre_docteur .listes_docteur .content_listes .nom_docteur img {
+	border-radius: 50%;
+  }
+  
+  #forums-blocs .forums .membre_docteur .listes_docteur .content_listes .nom_docteur h6 {
+	font-size: 15px;
+	margin-left: 5px;
+	margin-top: 8px;
+  }
+  
+  #forums-blocs .forums .membre_docteur .listes_docteur .content_listes .actif {
+	color: var(--green);
+  }
+  
+  #forums-blocs .forums .membre_docteur .listes_docteur .content_listes .inactif {
+	color: grey;
+  }
+  
+  @keyframes slideForums {
+	0% {
+	  transform: translateX(-1500px);
+	}
+	100% {
+	  transform: translateX(0);
+	}
+  }
+  
+  /*--------------------------------------------------------------
+  # Fin Forums
+  --------------------------------------------------------------*/
+  
+  /*--------------------------------------------------------------
+  # Listes Patients
+  --------------------------------------------------------------*/
+  
+  #listesPatients-blocs {
+	background-color: var(--bg);
+	width: 100%;
+	height: 91vh;
+	display: none;
+	animation-name: slideListesPatients;
+	animation-duration: 0.7s;
+	padding: 15px;
+	margin-top: 60px;
+  }
+  
+  #listesPatients-blocs .listesPatients {
+	width: 100%;
+	height: 90vh;
+	background: var(--bg);
+	padding: 10px;
+	box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2);
+  }
+  #listesPatients-blocs .listesPatients .recherche_patients input{
+	width: 400px;
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	border: none !important;
+	background-color: var(--bg);
+	padding-left: 10px;
+	margin-top: 10px;
+  }
+  #listesPatients-blocs .listesPatients .content_listesPatients{
+	margin-top: 10px;
+  }
+  #listesPatients-blocs .listesPatients .content_listesPatients .table-responsive .table .bg-thead{
+	background-color: var(--green);
+  }
+  #listesPatients-blocs .listesPatients .content_listesPatients .table-responsive .table .bg-thead th{
+	text-align: center!important;
+	color: var(--white);
+	font-weight: 600;
+	font-size: 15px;
+  }
+  #listesPatients-blocs .listesPatients .content_listesPatients .table-responsive .table tbody td{
+	font-size: 15px;
+	text-align: center!important;
+  }
+  #listesPatients-blocs .listesPatients .content_listesPatients .table-responsive .table tbody td .btn-success{
+	background-color: var(--green);
+	border: none!important;
+	color: var(--white);
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 3px solid rgb(200, 187, 187) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+  }
+  #listesPatients-blocs .listesPatients .content_listesPatients .table-responsive .table tbody td .btn-danger{
+	background-color: red;
+	border: none!important;
+	color: var(--white);
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 3px solid rgb(200, 187, 187) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+  }
+  #listesPatients-blocs .listesPatients .content_listesPatients .table-responsive .table tbody td .btn-avertissement{
+	background-color: red;
+	border: none!important;
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 3px solid rgb(200, 187, 187) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+  }
+  #listesPatients-blocs .listesPatients .content_listesPatients .table-responsive .table tbody td .btn-avertissement .badge{
+	color: var(--black);
+  }
+  @keyframes slideListesPatients {
+	0% {
+	  transform: translateX(-1500px);
+	}
+	100% {
+	  transform: translateX(0);
+	}
+  }
+  
+  #listesPatients-blocs .modal-detailsPatients .modal-content{
+   border: none!important;
+   background-color: var(--bg);
+  }
+  #listesPatients-blocs .modal-detailsPatients .modal-content .modal-header{
+	background-color: var(--green);
+	color: var(--white);
+	padding: 10px!important;
+  }
+  #listesPatients-blocs .modal-detailsPatients .modal-content .modal-header h5{
+	text-transform: uppercase;
+  }
+  #listesPatients-blocs .modal-detailsPatients .modal-content .modal-header .close{
+	opacity: 1!important;
+	color: var(--white);
+  }
+  #listesPatients-blocs .modal-detailsPatients .modal-content .modal-body{
+	padding: 20px;
+	background: var(--bg);
+  }
+  #listesPatients-blocs .modal-detailsPatients .modal-content .modal-body .image-patients{
+	width: 100%;
+	height: 280px;
+  }
+  #listesPatients-blocs .modal-detailsPatients .modal-content .modal-body .image-patients img{
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2);
+  }
+  #listesPatients-blocs .modal-detailsPatients .modal-content .modal-body .descriptionsPatients h6{
+	font-size: 15px;
+	color: rgb(97, 97, 97);
+	margin-bottom: 15px;
+	letter-spacing: 1px;
+  }
+  #listesPatients-blocs .modal-detailsPatients .modal-content .modal-body h6 {
+	font-size: 15px;
+	color: rgb(97, 97, 97);
+	margin-bottom: 15px;
+	letter-spacing: 1px;
+  }
+  #listesPatients-blocs .modal-detailsPatients .modal-content .modal-body h6 span{
+	font-weight: 600;
+	color: var(--green);
+  }
+  
+  
+  #listesPatients-blocs .modal-notifierPatients .modal-content{
+	border: none!important;
+	background-color: var(--bg);
+  }
+  #listesPatients-blocs .modal-notifierPatients .modal-content .modal-header{
+	background-color: var(--green);
+	color: var(--white);
+	text-transform: uppercase;
+	padding: 10px!important;
+  }
+  #listesPatients-blocs .modal-notifierPatients .modal-content .modal-header .close{
+	opacity: 1;
+	color: var(--white);
+  }
+  #listesPatients-blocs .modal-notifierPatients .modal-content .modal-body{
+	padding: 20px;
+  }
+  #listesPatients-blocs .modal-notifierPatients .modal-content .modal-body select{
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	border: none !important;
+	padding-left: 10px;
+	background-color: var(--bg);
+	font-weight: 600;
+	color: var(--black);
+  }
+  #listesPatients-blocs .modal-notifierPatients .modal-content .modal-body textarea{
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	border: none !important;
+	padding-left: 10px;
+	background-color: var(--bg);
+  }
+  #listesPatients-blocs .modal-notifierPatients .modal-content .modal-footer{
+	padding: 10px!important;
+	background-color: var(--green);
+  }
+  #listesPatients-blocs .modal-notifierPatients .modal-content .modal-footer button{
+	background-color: var(--white);
+	color: var(--black);
+	font-size: 15px;
+	transition: 0.5s;
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right:11px solid rgb(255, 255, 255) !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+
+  }
+  #listesPatients-blocs .modal-notifierPatients .modal-content .modal-footer button:hover{
+	transform: scale(1.1);
+  }
+  
+  
+  #listesPatients-blocs .modal-OrdonancePatients .modal-content{
+	border: none!important;
+	background-color: var(--bg);
+  }
+  #listesPatients-blocs .modal-OrdonancePatients .modal-content .modal-header{
+	background-color: var(--green);
+	color: var(--white);
+	text-transform: uppercase;
+	padding: 10px!important;
+  }
+  #listesPatients-blocs .modal-OrdonancePatients .modal-content .modal-header .close{
+	opacity: 1;
+	color: var(--white);
+  }
+  #listesPatients-blocs .modal-OrdonancePatients .modal-content .modal-body{
+	padding: 20px;
+  }
+  #listesPatients-blocs .modal-OrdonancePatients .modal-content .modal-body input{
+	
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	border: none !important;
+	padding-left: 10px;
+	background-color: var(--bg);
+  }
+  #listesPatients-blocs .modal-OrdonancePatients .modal-content .modal-body textarea{
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	border: none !important;
+	padding-left: 10px;
+	background-color: var(--bg);
+  }
+  #listesPatients-blocs .modal-OrdonancePatients .modal-content .modal-body select{
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+	border: none !important;
+	padding-left: 10px;
+	background-color: var(--bg);
+  }
+  #listesPatients-blocs .modal-OrdonancePatients .modal-content .modal-footer{
+	padding: 10px!important;
+	background-color: var(--green);
+  }
+  #listesPatients-blocs .modal-OrdonancePatients .modal-content .modal-footer button{
+	background-color: var(--white);
+	color: var(--black);
+	border-top: 3px solid rgb(200, 187, 187) !important;
+	border-right: 11px solid rgb(255, 255, 255)  !important;
+	border-bottom: 3px solid rgb(200, 187, 187) !important;
+	border-left: 11px solid rgb(255, 255, 255) !important;
+	font-size: 15px;
+	transition: 0.5s;
+  }
+  #listesPatients-blocs .modal-OrdonancePatients .modal-content .modal-footer button:hover{
+	transform: scale(1.1);
+  }
+  /*--------------------------------------------------------------
+  # Fin Listes Patients
+  --------------------------------------------------------------*/
+  
+  /*--------------------------------------------------------------
+  # Fin Content
+  --------------------------------------------------------------*/
+  
+  @media (min-width: 1200px) {}
+  
+  @media (min-width: 992px) and (max-width: 1199.98px) {}
+  
+  @media (min-width: 768px) and (max-width: 991.98px) {}
+  
+  @media (min-width: 576px) and (max-width: 767.98px) {}
+  
+  @media (min-width: 376px) and (max-width: 575.98px) {}
+  
+  @media (min-width: 320px) and (max-width: 375.98px) {}

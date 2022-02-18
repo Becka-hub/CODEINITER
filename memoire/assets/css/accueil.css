@@ -1,0 +1,229 @@
+:root {
+	--background: #0B1218;
+	--white: rgb(255, 255, 255);
+	--black: #080808;
+	--green: rgb(0, 230, 0);
+	--marron: rgb(100, 54, 1);
+}
+
+a {
+	transition: all 0.3s ease 0s;
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--white);
+	text-decoration: none;
+}
+
+a:active, a:hover {
+	outline: 0 none;
+}
+
+body, html {
+	background-color: var(--background);
+	scroll-behavior: smooth;
+	position: relative;
+	overflow-x: hidden;
+	font-family: "Poppins", sans-serif;
+}
+                                                      
+/*--------------------------------------------------------------
+  # header
+  --------------------------------------------------------------*/
+
+.navbar {
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	background: linear-gradient(-120deg, var(--white), var(--background)) !important;
+	left: 0;
+	width: 100%;
+	z-index: 99;
+	margin-top: 20px !important;
+	margin-left: 1px !important;
+	margin-bottom: 1px !important;
+	margin-right: 1px !important;
+	transition: 0.3s;
+	text-align: center;
+	border-radius: 5px;
+}
+
+.navbar h4 {
+	color: var(--white);
+	font-weight: 510;
+	margin-top: 12px;
+}
+
+.nav-item {
+	margin-left: 10px;
+	margin-right: 10px;
+	background-color: var(--green);
+	border-radius: 19px;
+	transition: 0.5s;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.nav-item:hover {
+	transform: scale(1.1);
+}
+
+.nav-item a {
+	color: var(--white);
+	font-weight: 510;
+	font-size: 15px;
+}
+
+.navbar-toggler-icon {
+	border-radius: 0.25rem;
+}
+
+.navbar-toggler {
+	padding: 0.25rem 0.75rem;
+	font-size: 1.25rem;
+	line-height: 1;
+	background-color: var(--white) !important;
+	border: 1px solid var(--green) !important;
+	border-radius: 0.25rem;
+	margin-right: 10px;
+}
+
+.navbar-toggler i {
+	font-size: 18px;
+	margin-top: 7px;
+}
+
+/*--------------------------------------------------------------
+  # Fin header
+  --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+  # Home
+  --------------------------------------------------------------*/
+
+#home {
+	height: 80vh;
+}
+
+#home h2 {
+	color: var(--white);
+	font-size: 35px;
+}
+
+#home .titre {
+	color: var(--green);
+}
+
+#home p {
+	color: var(--white);
+	margin-top: 20px;
+}
+
+#home .lien {
+	margin-top: 30px!important;
+	transition: 0.5s;
+}
+
+#home .lien:hover {
+	transform: scale(1.1);
+}
+
+#home a {
+	background: rgba(21, 255, 0, 0.29);
+	color: var(--white);
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	font-size: 15px;
+	font-weight: 510;
+	border-radius: 20px;
+	border: 1px solid var(--green);
+}
+
+#home .image-accueil {
+	width: 100%;
+	height: 450px;
+}
+
+#home .image-accueil img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+/*--------------------------------------------------------------
+  # Fin Home
+  --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+  # Footer
+  --------------------------------------------------------------*/
+
+footer {
+	background: linear-gradient(-120deg, var(--white), var(--background)) !important;
+	height: 42px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	padding-top: 12px;
+	bottom: 0!important;
+}
+
+footer h6 {
+	font-size: 15px;
+	color: var(--white);
+}
+
+footer strong {
+	color: var(--white);
+	font-weight: 600;
+}
+
+/*--------------------------------------------------------------
+  # Fin Footer
+  --------------------------------------------------------------*/
+
+@media (min-width:992px) and (max-width:1199.98px) {
+	footer {
+		margin-top: 40px;
+	}
+}
+
+@media (min-width:768px) and (max-width:991.98px) {
+	footer {
+		margin-top: 40px;
+	}
+}
+
+@media (min-width:576px) and (max-width:767.98px) {
+	#home {
+		height: auto!important;
+	}
+	footer {
+		margin-top: 40px;
+	}
+}
+
+@media (min-width:480px) and (max-width:575.98px) {
+	#home {
+		height: auto!important;
+	}
+	footer {
+		margin-top: 40px;
+	}
+}
+
+@media (min-width:320px) and (max-width:479.98px) {
+	#home {
+		height: auto!important;
+	}
+	#home .image-accueil img {
+		margin-top: 0!important;
+	}
+	.navbar h4 {
+		font-size: 17px;
+		margin-left: -26px;
+	}
+}
